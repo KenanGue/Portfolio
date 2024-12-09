@@ -20,11 +20,11 @@ export class AboveTheFoldComponent implements OnInit {
 
   ngOnInit() {
     this.updateBanner();
-    setInterval(() => this.updateBanner(), 5000); // Alle 5 Sekunden aktualisieren
+    setInterval(() => this.updateBanner(), 5000);
   }
 
   private updateBanner() {
     this.currentBannerText = this.bannerItems[this.currentIndex];
-    this.currentIndex = (this.currentIndex + 1) % this.bannerItems.length; // Nächster Index
+    this.currentIndex = (this.currentIndex + 1) % this.bannerItems.length; 
   }
 }
