@@ -1,0 +1,51 @@
+.header {
+    height: 98px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 96px;
+    padding-right: 96px;
+
+    >div {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        >p {
+            font-family: fira code;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 26.24px;
+            letter-spacing: -0.03em;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+
+            &:hover {
+                color: #3DCFB6;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+
+.language-switch {
+    width: 84px;
+    height: 28px;
+}
+
+.language-switch:hover {
+    background-image: url(/assets/img/language-switch/deutsch-hover.png);
+}
+
+.header-logo {
+    background-image: url(/assets/img/logo/logo.png);
+    width: 132.14px;
+    height: 48px;
+}
+
+.header-logo:hover {
+    background-image: url(/assets/img/logo/hover.png);
+    cursor: pointer;
+}
