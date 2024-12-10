@@ -1,30 +1,37 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, NgZone, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-above-the-fold',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './above-the-fold.component.html',
-  styleUrls: ['./above-the-fold.component.scss']
+  styleUrl: './above-the-fold.component.scss'
 })
-export class AboveTheFoldComponent implements OnInit {
-  private bannerItems: string[] = [
-    "Available for remote work",
-    "Frontend Developer",
-    "Based in Mayen",
-    "Open to opportunities"
+export class AboveTheFoldComponent {
+  scrollingTexts: string[] = [
+    'Available for remote work',
+    'Frontend Developer',
+    'Based in Mayen',
+    'Open to opportunities'
   ];
-  private currentIndex: number = 0;
-  public currentBannerText: string = '';
+  private intervalId: any;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private ngZone: NgZone) {}
 
   ngOnInit() {
-    this.updateBanner();
-    setInterval(() => this.updateBanner(), 5000); // Alle 5 Sekunden aktualisieren
+    if (isPlatformBrowser(this.platformId)) {
+      
+        this.intervalId = setInterval(() => {
+        }, 10000);
+    }
   }
-
-  private updateBanner() {
-    this.currentBannerText = this.bannerItems[this.currentIndex];
-    this.currentIndex = (this.currentIndex + 1) % this.bannerItems.length; // Nächster Index
+  
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
 }
+

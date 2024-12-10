@@ -1,15 +1,16 @@
 .header {
     height: 98px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-left: 96px;
-    padding-right: 96px;
+    justify-content: space-between;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
 
     >div {
         display: flex;
         align-items: center;
         gap: 24px;
+        margin-left: 96px;
+        margin-right: 96px;
 
         >p {
             font-family: fira code;
@@ -20,6 +21,7 @@
             text-align: left;
             text-underline-position: from-font;
             text-decoration-skip-ink: none;
+            color: #FFFFFF;
 
             &:hover {
                 color: #3DCFB6;
@@ -33,19 +35,19 @@
 .language-switch {
     width: 84px;
     height: 28px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
-.language-switch:hover {
-    background-image: url(/assets/img/language-switch/deutsch-hover.png);
-}
+
 
 .header-logo {
-    background-image: url(/assets/img/logo/logo.png);
     width: 132.14px;
     height: 48px;
-}
 
-.header-logo:hover {
-    background-image: url(/assets/img/logo/hover.png);
-    cursor: pointer;
+    &:hover {
+        cursor: pointer;
+    }
 }

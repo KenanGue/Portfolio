@@ -5,11 +5,33 @@
         <button>Check my work</button>
         <button>Contact me</button>
     </div>
-</div>
+
 <div class="banner">
     <div class="scrolling-text">
-        <div class="distance-point"></div>
-        <div class="banner-item">{{ currentBannerText }}</div>
-        <div class="distance-point"></div>
+        <div class="text-container">
+            <span class="distance-point">•</span>
+            <ng-container *ngFor="let text of scrollingTexts; let isLast = last">
+                <span class="banner-text">{{ text }}</span>
+                <span *ngIf="!isLast" class="distance-point">•</span>
+            </ng-container>
+            <span class="distance-point">•</span>
+            <ng-container *ngFor="let text of scrollingTexts; let isLast = last">
+                <span class="banner-text">{{ text }}</span>
+                <span *ngIf="!isLast" class="distance-point">•</span>
+            </ng-container>
+        </div>
     </div>
+</div>
+
+<div class="right-lateral">
+<a href="mailto:gunes.kenan93@gmail.com">gunes.kenan93&#64;gmail.com</a>
+<a href=""><img src="./../../../assets/img/above-the-fold/Github.png" alt=""></a>
+<a href=""><img src="./../../../assets/img/above-the-fold/Linkedin.png" alt=""></a>
+<div></div>
+</div>
+
+<div class="left-lateral">
+    <a href=""><img src="./../../../assets/img/above-the-fold/arrow-btn-normal.png" alt=""></a>
+<div class="vertical-line-left"></div>
+</div>
 </div>
