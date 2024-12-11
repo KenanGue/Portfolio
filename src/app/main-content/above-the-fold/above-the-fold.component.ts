@@ -21,16 +21,11 @@ export class AboveTheFoldComponent {
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private ngZone: NgZone) {}
 
   ngOnInit() {
-<<<<<<< HEAD
     if (isPlatformBrowser(this.platformId)) {
       
         this.intervalId = setInterval(() => {
         }, 10000);
     }
-=======
-    this.updateBanner();
-    setInterval(() => this.updateBanner(), 5000);
->>>>>>> af4aaf814b1d415271101097548e7e4284f016c8
   }
   
   ngOnDestroy() {
@@ -40,11 +35,3 @@ export class AboveTheFoldComponent {
   }
 }
 
-<<<<<<< HEAD
-=======
-  private updateBanner() {
-    this.currentBannerText = this.bannerItems[this.currentIndex];
-    this.currentIndex = (this.currentIndex + 1) % this.bannerItems.length; 
-  }
-}
->>>>>>> af4aaf814b1d415271101097548e7e4284f016c8

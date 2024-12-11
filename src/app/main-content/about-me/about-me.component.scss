@@ -4,52 +4,47 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 96px;
+    padding-left: 96px;
 
-
-    .main-container {
-        width: 100%;
-        height: 708px;
+    .image-container {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-right: 96px;
-        padding-left: 96px;
+        height: 708px;
+    }
 
-        .image-container {
-            display: flex;
-            height: 708px;
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 708px;
+    }
+
+    div:nth-child(1) {
+        img {
+            width: 568px;
+            height: 568px;
+            border-radius: 30px;
+        }
+    }
+
+    div:nth-child(2) {
+        h3 {
+            font-family: "karla";
+            font-size: 24px;
+            font-weight: 500;
+            color: #3DCFB6;
+            margin-top: 0;
+
         }
 
-        .text-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            height: 708px;
-        }
-
-        div:nth-child(1) {
-            img {
-                width: 568px;
-                height: 568px;
-                border-radius: 30px;
-            }
-        }
-
-        div:nth-child(2) {
-            h3 {
-                font-family: "karla";
-                font-size: 24px;
-                font-weight: 500;
-                color: #3DCFB6;
-                margin-top: 0;
-
-            }
-
-        }
     }
 }
 
-.about-me_description {
+
+.about-me-description {
     width: 568px;
     height: 562px;
     border: 1px solid #3DCFB6;
@@ -60,11 +55,16 @@
     flex-direction: column;
 
     >p:nth-child(1) {
-        font-family: "fira code";
-        font-weight: 700;
+        font-family: Fira Code;
         font-size: 64px;
+        font-weight: 700;
+        line-height: 64px;
+        letter-spacing: -0.03em;
+        text-align: left;        
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
         margin: 0;
-        padding: 16px 0px 24px 32px;
+        padding: 32px 0px 32px 32px;
     }
 
     >p:nth-child(2) {
@@ -74,7 +74,7 @@
         color: #ffffff;
         margin: 0;
         padding: 0px 32px 32px 32px;
-
+        text-align: justify;
     }
 
     >p:nth-child(3),
@@ -97,6 +97,7 @@
         color: #ffffff;
         display: flex;
         align-items: flex-start;
+        text-align: justify;
         gap: 24px;
         margin: 0;
         padding: 0px 32px 32px 32px;
