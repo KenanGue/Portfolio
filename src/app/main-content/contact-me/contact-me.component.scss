@@ -1,0 +1,300 @@
+.contact-me {
+    height: 100vh;
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 96px;
+    padding-left: 96px;
+}
+
+.text {
+    height: 558px;
+
+    >div:nth-child(1) {
+        >h2 {
+            font-family: "karla";
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 28.06px;
+            text-align: left;
+            text-underline-position: auto;
+            text-decoration-skip-ink: none;
+            color: #3DCFB6;
+            margin-top: 0;
+        }
+
+        >h1 {
+            font-family: "fira code";
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 64px;
+            letter-spacing: -0.03em;
+            text-align: left;
+            text-underline-position: auto;
+            text-decoration-skip-ink: none;
+            color: #3DCFB6;
+            margin: 0;
+        }
+    }
+
+    >div:nth-child(2) {
+        font-family: "fira code";
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28.8px;
+        text-align: left;
+        text-underline-position: auto;
+        text-decoration-skip-ink: none;
+        color: #3DCFB6;
+
+        >div:nth-child(1) {
+            font-family: "fira code";
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 28.8px;
+            text-align: left;
+            text-underline-position: auto;
+            text-decoration-skip-ink: none;
+            color: #3DCFB6;
+            width: 568px;
+            height: 132;
+        }
+
+        >p:nth-child(2) {
+            font-family: "karla";
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.2px;
+            text-align: left;
+            text-underline-position: auto;
+            text-decoration-skip-ink: none;
+            color: #ffffff;
+            width: 568px;
+        }
+
+        >p:nth-child(3) {
+            font-family: "karla";
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.2px;
+            text-align: left;
+            text-underline-position: auto;
+            text-decoration-skip-ink: none;
+            color: #ffffff;
+
+            >span {
+                color: #3DCFB6;
+            }
+        }
+    }
+}
+
+.form {
+    >div:nth-child(4) {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding-top: 32px;
+
+        >input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            background-color: transparent;
+            border: 2px solid #3DCFB6;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        >input[type="checkbox"]:checked {
+            background-color: #3DCFB6;
+            border-color: #3DCFB6;
+            position: relative;
+        }
+
+        >input[type="checkbox"]:checked::before {
+            content: '✔';
+            display: block;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        >p {
+            font-family: "karla";
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 18px;
+            text-align: left;
+            text-underline-position: auto;
+            text-decoration-skip-ink: none;
+            color: #ffffff;
+
+            >a {
+                font-family: "fira code";
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 18px;
+                letter-spacing: -0.03em;
+                text-underline-position: auto;
+                text-decoration-skip-ink: none;
+                color: #3DCFB6;
+
+                &:hover {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    >div:nth-child(5) {
+        display: flex;
+        justify-content: center;
+
+        >button {
+            width: 140px;
+            height: 48px;
+            padding: 0px 24px 0px 24px;
+            gap: 10px;
+            border-radius: 100px;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #FFFFFF;
+            margin-top: 32px;
+            font-family: "karla";
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 21.6px;
+            text-underline-position: auto;
+            text-decoration-skip-ink: none;
+
+        }
+    }
+
+}
+
+.name {
+    width: 616px;
+    height: 131px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-bottom: 1px solid #3DCFB6;
+    border-top: 1px solid #3DCFB6;
+    gap: 10px;
+    padding-left: 32px;
+
+    >div {
+        >p {
+            font-family: "fira code";
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+            text-underline-position: auto;
+            text-decoration-skip-ink: none;
+            color: #3DCFB6;
+            margin: 0;
+        }
+    }
+
+    >input {
+        border: none;
+        background-color: transparent;
+        font-family: "karla";
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21.6px;
+        text-align: left;
+        text-underline-position: auto;
+        text-decoration-skip-ink: none;
+        color: #ffffff;
+        width: 352.5px;
+    }
+}
+
+.email {
+    width: 616px;
+    height: 131px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-bottom: 1px solid #3DCFB6;
+    border-top: 1px solid #3DCFB6;
+    gap: 10px;
+    padding-left: 32px;
+
+    >div {
+        >p {
+            font-family: "fira code";
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+            text-underline-position: auto;
+            text-decoration-skip-ink: none;
+            color: #3DCFB6;
+            margin: 0;
+        }
+    }
+
+    >input {
+        border: none;
+        background-color: transparent;
+        font-family: "karla";
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21.6px;
+        text-align: left;
+        text-underline-position: auto;
+        text-decoration-skip-ink: none;
+        color: #ffffff;
+        width: 352.5px;
+    }
+}
+
+.help {
+    width: 616px;
+    height: 131px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-bottom: 1px solid #3DCFB6;
+    border-top: 1px solid #3DCFB6;
+    gap: 10px;
+    padding-left: 32px;
+
+    >div {
+        >p {
+            font-family: "fira code";
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 28.8px;
+            text-align: left;
+            text-underline-position: auto;
+            text-decoration-skip-ink: none;
+            color: #3DCFB6;
+            margin: 0;
+        }
+    }
+
+    >input {
+        border: none;
+        background-color: transparent;
+        font-family: "karla";
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21.6px;
+        text-align: left;
+        text-underline-position: auto;
+        text-decoration-skip-ink: none;
+        color: #ffffff;
+        width: 352.5px;
+    }
+}
