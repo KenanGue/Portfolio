@@ -1,5 +1,5 @@
 .portfolio-projects {
-    height: 581px;
+    height: 80vh;
     background-color: rgb(28, 28, 28);
     display: flex;
     align-items: flex-start;
@@ -96,8 +96,6 @@ margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #3DCFB6;
-    border-top: 1px solid #3DCFB6;
 
     &:hover {
         background-color: #2F5B53;

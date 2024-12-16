@@ -1,11 +1,22 @@
-<div class="header">
-<div>
-    <div><img class="language-switch" src="./../../../assets/img/header/english.png"></div>
-    <p>About me</p>
-    <p>Skills</p>
-    <p>Projects</p>
-</div>
-<div class="header-logo">
-    <img src="./../../../assets/img/header/logo.png" alt="">
-</div>
+<div class="content-limitation">
+  <div class="header">
+    <div>
+      <div>
+          <div class="language-switch">
+            <div (click)="switchButton()">
+              <img src="./../../../assets/img/header/english.png" alt="English">
+              <img src="./../../../assets/img/header/deutsch.png" alt="Deutsch">
+            </div>
+        </div>
+      </div>
+      <p (click)="scrollToSection('about-me')">{{ 'MENU1' | translate }}</p>
+      <p (click)="scrollToSection('skills')">{{ 'MENU2' | translate }}</p>
+      <p (click)="scrollToSection('projecs')">{{ 'MENU3' | translate }}</p>
+      
+    </div>
+    <div class="header-logo" (mouseover)="logo()" (mouseout)="logoHover()">
+      <img src="/assets/img/header/logo.png" alt="">
+      <img src="/assets/img/header/hover.png" alt="">
+    </div>
+  </div>
 </div>

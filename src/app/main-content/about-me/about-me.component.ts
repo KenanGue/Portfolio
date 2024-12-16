@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-about-me',
@@ -9,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AboutMeComponent {
 
+  constructor(private elementRef: ElementRef) { }
+
+  onMouseOver() {
+    this.elementRef.nativeElement.querySelector('.image-container').classList.add('hover');
+  }
+
+  onMouseOut() {
+    this.elementRef.nativeElement.querySelector('.image-container').classList.remove('hover');
+  }
 }

@@ -1,9 +1,15 @@
+.content-limitation {
+    width: 100%;
+}
+
+
 .header {
+    background: linear-gradient(0deg, rgba(28, 28, 28, 0) 13.56%, rgba(28, 28, 28, 0.6) 84.01%);
+    border-left: 0px solid white;
     height: 98px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
 
     >div {
         display: flex;
@@ -22,10 +28,28 @@
             text-underline-position: from-font;
             text-decoration-skip-ink: none;
             color: #FFFFFF;
+            position: relative;
 
             &:hover {
-                color: #3DCFB6;
                 cursor: pointer;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -8px; /* Abstand zum Text */
+                left: 50%;
+                transform: translateX(-50%);
+                width: 6px; /* Größe des Punkts */
+                height: 6px;
+                background-color: #3DCFB6;
+                border-radius: 50%;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            &:hover::after {
+                opacity: 1;
             }
         }
 
@@ -33,21 +57,45 @@
 }
 
 .language-switch {
-    width: 84px;
-    height: 28px;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
 
-    &:hover {
-        cursor: pointer;
+    >div:nth-child(1) {
+        >img:nth-child(1) {
+            display: block;
+        }
+
+        >img:nth-child(2) {
+            display: none;
+        }
     }
 }
 
 
 
-.header-logo {
-    width: 132.14px;
-    height: 48px;
 
-    &:hover {
-        cursor: pointer;
+
+.header-logo {
+    display: flex;
+    align-items: center;
+
+    >img:nth-child(1) {
+        width: 110px;
+    }
+
+    >img:nth-child(2) {
+        width: 110px;
+        display: none;
+    }
+
+    &.hover {
+        >img:nth-child(1) {
+            display: none;
+        }
+
+        >img:nth-child(2) {
+            display: block;
+        }
     }
 }
