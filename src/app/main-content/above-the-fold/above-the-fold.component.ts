@@ -7,31 +7,49 @@ import { isPlatformBrowser } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './above-the-fold.component.html',
-  styleUrl: './above-the-fold.component.scss'
+  styleUrl: './above-the-fold.component.scss',
 })
 export class AboveTheFoldComponent {
   scrollingTexts: string[] = [
     'Available for remote work',
     'Frontend Developer',
     'Based in Mayen',
-    'Open to opportunities'
+    'Open to opportunities',
   ];
-  private intervalId: any;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private ngZone: NgZone) {}
+  arrowImages: string[] = [
+    './../../../assets/img/above-the-fold/arrow-btn-normal.png',
+    './../../../assets/img/above-the-fold/arrow-btn-down.png',
+  ];
+
+  currentArrowIndex: number = 0;
+  private arrowIntervalId: any;
+
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private ngZone: NgZone
+  ) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      
-        this.intervalId = setInterval(() => {
-        }, 10000);
+      this.ngZone.run(() => {
+        setInterval(() => {
+          this.currentArrowIndex =
+            (this.currentArrowIndex + 1) % 2; // Zwischen 0 und 1 wechseln
+        }, 1000); // Wechsel alle 1 Sekunde
+      });
     }
   }
   
+  switchArrowImage() {
+    this.currentArrowIndex = (this.currentArrowIndex + 1) % this.arrowImages.length;
+    setTimeout(() => this.switchArrowImage(),800); // Wechsel alle 1s
+  }
+  
+
   ngOnDestroy() {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
+    if (this.arrowIntervalId) {
+      clearInterval(this.arrowIntervalId); // Speicherlecks vermeiden
     }
   }
 }
-

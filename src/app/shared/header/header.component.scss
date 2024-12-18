@@ -1,22 +1,25 @@
-.content-limitation {
+.bg-color {
+    background: linear-gradient(0deg, rgba(28, 28, 28, 0) 13.56%, rgba(28, 28, 28, 0.6) 84.01%);
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-
 .header {
-    background: linear-gradient(0deg, rgba(28, 28, 28, 0) 13.56%, rgba(28, 28, 28, 0.6) 84.01%);
+    width: 1440px;
     border-left: 0px solid white;
     height: 98px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: absolute;
+    top: 0;
+    z-index: 1;
 
     >div {
         display: flex;
         align-items: center;
         gap: 24px;
-        margin-left: 96px;
-        margin-right: 96px;
 
         >p {
             font-family: fira code;
@@ -37,10 +40,12 @@
             &::after {
                 content: '';
                 position: absolute;
-                bottom: -8px; /* Abstand zum Text */
+                bottom: -8px;
+                /* Abstand zum Text */
                 left: 50%;
                 transform: translateX(-50%);
-                width: 6px; /* Größe des Punkts */
+                width: 6px;
+                /* Größe des Punkts */
                 height: 6px;
                 background-color: #3DCFB6;
                 border-radius: 50%;

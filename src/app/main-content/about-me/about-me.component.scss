@@ -1,16 +1,22 @@
-.about-me {
-    height: 100vh;
+.bg-color {
+    width: 100%;
     background-color: rgb(28, 28, 28);
+    box-shadow: 111px -6px 12px 5px rgba(28, 28, 28, 0.9);
+    display: flex;
+    justify-content: center;
+}
+
+.about-me {
+    width: 1440px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding-right: 96px;
-    padding-left: 96px;
+    padding: 96px 0px 96px 0px;
 
     .image-container {
         position: relative;
         height: 708px;
-      
+
         img:nth-child(1) {
             width: 568px;
             height: 568px;
@@ -20,20 +26,20 @@
             display: none;
             top: 24px;
         }
-        
+
         img:nth-child(2) {
             width: 568px;
             height: 568px;
             border-radius: 30px;
             position: absolute;
         }
-      
+
         &.hover {
-          img:nth-child(1) {
-            display: block;
-          }
+            img:nth-child(1) {
+                display: block;
+            }
         }
-      }
+    }
 
     .text-container {
         display: flex;

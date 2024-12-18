@@ -1,11 +1,16 @@
-.skills {
-    height: 100vh;
+.bg-color {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
+}
+
+.skills {
+    width: 1440px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 96px;
-    padding-left: 96px;
+    padding: 96px 96px 96px 96px;
 
     .text-container {
         display: flex;

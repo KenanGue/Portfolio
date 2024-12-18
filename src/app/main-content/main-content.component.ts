@@ -7,11 +7,12 @@ import { ProjectsComponent } from "./projects/projects.component";
 import { SkillsComponent } from "./skills/skills.component"
 import { FooterComponent } from "../shared/footer/footer.component";
 import { ContactMeComponent } from "./contact-me/contact-me.component";
+import { ContactFormComponent } from '../contact-form/contact-form.component';
 
 @Component({
   selector: 'app-main-content',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, AboveTheFoldComponent, AboutMeComponent, ProjectsComponent, SkillsComponent, FooterComponent, ContactMeComponent],
+  imports: [CommonModule, HeaderComponent, AboveTheFoldComponent, AboutMeComponent, ProjectsComponent, SkillsComponent, FooterComponent, ContactMeComponent, ContactFormComponent],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
 })
