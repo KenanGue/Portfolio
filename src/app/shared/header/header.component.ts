@@ -17,11 +17,11 @@ export class HeaderComponent {
   }
 
   logo() {
-    this.elementRef.nativeElement.querySelector('.logo').classList.add('hover');
+    this.elementRef.nativeElement.querySelector('.header-logo').classList.add('hover');
   }
 
   logoHover() {
-    this.elementRef.nativeElement.querySelector('.logo').classList.remove('hover');
+    this.elementRef.nativeElement.querySelector('.header-logo').classList.remove('hover');
   }
 
   switchButton(): void {

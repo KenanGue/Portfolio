@@ -54,6 +54,11 @@
 
 }
 
+.hover-join{
+    display: flex;
+    justify-content: space-between;
+    height: 110px;
+}
 
 .single-project-join {
     width: 880px;
@@ -95,12 +100,21 @@
     }
 }
 
+.hover-game{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+}
+
 .single-project-game {
     width: 880px;
     height: 109px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #3DCFB6;
+
 
     &:hover {
         background-color: #2F5B53;
@@ -173,3 +187,18 @@
         color: #3DCFB6;
     }
 }
+
+.projects {
+    cursor: pointer;
+
+    .hover-join img,
+    .hover-game img {
+      display: none; 
+    }
+  
+    .single-project-join:hover + div img,
+    .single-project-game:hover + div img {
+      display: block; 
+    }
+  }
+  
