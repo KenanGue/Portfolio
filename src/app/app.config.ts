@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { importProvidersFrom } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateService, TranslateStore, TranslateCompiler } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateFakeCompiler } from '@ngx-translate/core';
@@ -16,7 +16,8 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideClientHydration(),
-    importProvidersFrom(HttpClientModule), // HttpClientModule wird korrekt eingebunden
+    importProvidersFrom(HttpClientModule),
+    provideHttpClient(), 
     {
       provide: TranslateLoader, // Bereitstellung des TranslateLoader
       useFactory: createTranslateLoader,
