@@ -32,32 +32,20 @@
             text-align: center;
             line-height: 20px;
         }
-
-        >p {
-            font-family: "karla";
-            font-size: 15px;
-            font-weight: 400;
-            line-height: 18px;
-            text-align: left;
-            text-underline-position: auto;
-            text-decoration-skip-ink: none;
-            color: #ffffff;
-
-            >a {
-                font-family: "fira code";
+        >div{
+            >p {
+                font-family: "karla";
                 font-size: 15px;
                 font-weight: 400;
                 line-height: 18px;
-                letter-spacing: -0.03em;
+                text-align: left;
                 text-underline-position: auto;
                 text-decoration-skip-ink: none;
-                color: #3DCFB6;
-
-                &:hover {
-                    color: #ffffff;
-                }
+                color: #ffffff;
+                margin: 0;
             }
         }
+
     }
 
     >div:nth-child(5) {
@@ -79,6 +67,11 @@
             line-height: 21.6px;
             text-underline-position: auto;
             text-decoration-skip-ink: none;
+            &:hover{
+                color: #3DCFB6;
+                border: 1px solid #3DCFB6;
+                cursor: pointer;
+            }
         }
     }
 }
@@ -203,3 +196,18 @@
         width: 352.5px;
     }
 }
+
+:host ::ng-deep .privacy-link {
+    font-family: "fira code";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    text-decoration-skip-ink: none;
+    color: #3DCFB6;
+    &:hover{
+        color: #FFFFFF;
+    }
+  }
+  

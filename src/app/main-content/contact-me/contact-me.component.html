@@ -1,17 +1,16 @@
-<div class="contact-me">
+<div id="contact-me" class="contact-me">
     <div class="text">
         <div>
-            <h2>Conatct me</h2>
-            <h1>Let's work</h1>
-            <h1>together</h1>
+            <h2>{{ 'CONTACT_TITLE' | translate }}</h2>
+            <h1>{{ 'CONTACT_SUBTITLE_1' | translate }}</h1>
+            <h1>{{ 'CONTACT_SUBTITLE_2' | translate }}</h1>
         </div>
         <div>
             <div>
-                <p>Got a problem to solve?</p>
+                <p>{{ 'CONTACT_QUESTION' | translate }}</p>
             </div>
-            <p>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to
-                your projects with my work.</p>
-            <p>Need a Frontend developer?<span> Let's talk</span></p>
+            <p>{{ 'CONTACT_DESCRIPTION' | translate }}</p>
+            <p [innerHTML]="'CONTACT_TALK' | translate"></p>
         </div>
     </div>
 </div>

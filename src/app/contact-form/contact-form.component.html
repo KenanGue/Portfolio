@@ -2,67 +2,49 @@
   <div class="form">
     <div class="name">
       <div>
-        <p>What's your name?</p>
+        <p>{{ 'FORM_NAME_LABEL' | translate }}</p>
       </div>
-      <input 
-        type="text" 
-        placeholder="Your name goes here" 
-        name="name" 
-        [(ngModel)]="contactData.name" 
+      <input type="text" [placeholder]="'FORM_NAME_PLACEHOLDER' | translate" name="name" [(ngModel)]="contactData.name"
         required>
       <div *ngIf="contactForm.submitted && contactForm.controls['name']?.invalid" style="color:red;">
-        Bitte gib deinen Namen ein.
+        {{ 'FORM_NAME_ERROR' | translate }}
       </div>
     </div>
 
     <div class="email">
       <div>
-        <p>What's your email?</p>
+        <p>{{ 'FORM_EMAIL_LABEL' | translate }}</p>
       </div>
-      <input 
-        type="email" 
-        placeholder="youremail@email.com" 
-        name="email" 
-        [(ngModel)]="contactData.email" 
-        required 
-        email 
-        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+      <input type="email" [placeholder]="'FORM_EMAIL_PLACEHOLDER' | translate" name="email"
+        [(ngModel)]="contactData.email" required email pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
       <div *ngIf="contactForm.submitted && contactForm.controls['email']?.invalid" style="color:red;">
-        Bitte gib eine gültige E-Mail-Adresse ein.
+        {{ 'FORM_EMAIL_ERROR' | translate }}
       </div>
     </div>
 
     <div class="help">
       <div>
-        <p>How can I help you?</p>
+        <p>{{ 'FORM_MESSAGE_LABEL' | translate }}</p>
       </div>
-      <input 
-        type="text" 
-        placeholder="Hello Kenan, I am interested in..." 
-        name="message" 
-        [(ngModel)]="contactData.message" 
-        required>
+      <input type="text" [placeholder]="'FORM_MESSAGE_PLACEHOLDER' | translate" name="message"
+        [(ngModel)]="contactData.message" required>
       <div *ngIf="contactForm.submitted && contactForm.controls['message']?.invalid" style="color:red;">
-        Bitte gib eine Nachricht ein.
+        {{ 'FORM_MESSAGE_ERROR' | translate }}
       </div>
     </div>
 
     <div>
-      <input 
-        type="checkbox" 
-        name="privacyChecked" 
-        [(ngModel)]="privacyChecked" 
-        required>
-      <p>
-        I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.
-      </p>
-      <div *ngIf="contactForm.submitted && contactForm.controls['privacyChecked']?.invalid" style="color:red;">
-        Du musst den Datenschutzbestimmungen zustimmen.
+      <input type="checkbox" name="privacyChecked" [(ngModel)]="privacyChecked" required>
+      <div>
+        <p [innerHTML]="'FORM_PRIVACY_TEXT' | translate"></p>
+        <div *ngIf="contactForm.submitted && contactForm.controls['privacyChecked']?.invalid" style="color:red;">
+          {{ 'FORM_PRIVACY_ERROR' | translate }}
+        </div>
       </div>
     </div>
 
     <div>
-      <button type="submit">Say Hello ;)</button>
+      <button type="submit">{{ 'FORM_SUBMIT_BUTTON' | translate }}</button>
     </div>
   </div>
 </form>

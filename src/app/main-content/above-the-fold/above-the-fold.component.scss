@@ -1,13 +1,20 @@
-.above-the-fold {
+.bg-color{
     width: 100%;
-    height: 100vh;
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+    display: flex;
+    justify-content: center;
+}
+
+.above-the-fold {
+    width: 1440px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 12px;
     background-position: center;
+    padding: 0px 96px;
 
     >h4 {
         font-family: Fira Code;
@@ -49,16 +56,19 @@
             font-size: 18px;
             font-weight: 400;
             background-color: transparent;
+            &:hover{
+                color: #3DCFB6;
+                border: 1px solid #3DCFB6;
+                cursor: pointer;
+            }
         }
     }
 
     >div:nth-child(5) {
-        width: 1440px;
+        width: 100%;
         display: flex;   
         justify-content: space-between;
         flex-direction: row-reverse;
-        position: absolute;
-        bottom: 0;
     }
 }
 
@@ -136,7 +146,8 @@
 }
 
 .right-lateral {
-    
+    position: absolute;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -209,6 +220,9 @@
 }
 
 .left-lateral {
+    position: absolute;
+    bottom: 0;
+    left: 96px;
     display: flex;
     flex-direction: column;
     align-items: center;
