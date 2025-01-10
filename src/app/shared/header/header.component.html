@@ -2,21 +2,47 @@
   <div class="header">
     <div>
       <div>
-          <div class="language-switch">
-            <div (click)="switchButton()">
-              <img src="./../../../assets/img/header/english.png" alt="English">
-              <img src="./../../../assets/img/header/deutsch.png" alt="Deutsch">
-            </div>
+        <div class="language-switch">
+          <div (click)="switchButton()">
+            <img src="./../../../assets/img/header/english.png" alt="English">
+            <img src="./../../../assets/img/header/deutsch.png" alt="Deutsch">
+          </div>
         </div>
       </div>
       <p (click)="scrollToSection('about-me')">{{ 'MENU1' | translate }}</p>
       <p (click)="scrollToSection('skills')">{{ 'MENU2' | translate }}</p>
       <p (click)="scrollToSection('projects')">{{ 'MENU3' | translate }}</p>
-      
     </div>
     <div class="header-logo" (mouseover)="logo()" (mouseout)="logoHover()">
       <img src="/assets/img/header/logo.png" alt="">
-      <img src="/assets/img/header/hover.png" alt="">
+      <img src="/assets/img/header/logo_hover.png" alt="">
+    </div>
+  </div>
+
+  <div class="header-mobile">
+    <div class="mobile-logo" (mouseover)="logoMobile()" (mouseout)="logoHoverMobile()">
+      <img src="./../../../assets/img/header/logo_small.png" alt="">
+      <img src="./../../../assets/img/header/logo_small_hover.png" alt="">
+    </div>
+    <div class="mobile-menu" (click)="toggleMenu()">
+      <div class="hamburger" (mouseover)="hamburger()" (mouseout)="hamburgerHover()">
+        <img src="./../../../assets/img/header/menu.png" alt="">
+        <img src="./../../../assets/img/header/menu_hover.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="overlay" *ngIf="menuOpen" (click)="closeMenu()"></div>
+  <div class="mobile-dropdown-menu" *ngIf="menuOpen">
+    <ul>
+      <li (click)="scrollToSection('about-me')">{{ 'About me' }}</li>
+      <li (click)="scrollToSection('skills')">{{ 'Skills' }}</li>
+      <li (click)="scrollToSection('projects')">{{ 'Projects' }}</li>
+    </ul>
+    <div class="language-switch">
+      <div (click)="switchButton()">
+        <img src="./../../../assets/img/header/english.png" alt="English">
+        <img src="./../../../assets/img/header/deutsch.png" alt="Deutsch">
+      </div>
     </div>
   </div>
 </div>

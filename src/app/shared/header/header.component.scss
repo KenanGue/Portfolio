@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-position: absolute;
+    position: absolute;
 }
 
 .header {
@@ -14,7 +14,8 @@ position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
-   padding: 0px 96px;
+    padding: 0px 96px;
+
 
 
     >div {
@@ -75,13 +76,10 @@ position: absolute;
     }
 }
 
-
-
-
-
 .header-logo {
     display: flex;
     align-items: center;
+
     >img:nth-child(1) {
         width: 110px;
     }
@@ -99,5 +97,195 @@ position: absolute;
         >img:nth-child(2) {
             display: block;
         }
+    }
+}
+
+
+
+.mobile-logo {
+    display: none;
+    width: 110px;
+    height: 115.81px;
+
+    >img:nth-child(1) {
+        width: 110px;
+    }
+
+    >img:nth-child(2) {
+        width: 110px;
+        display: none;
+    }
+
+    &.hover {
+        >img:nth-child(1) {
+            display: none;
+        }
+
+        >img:nth-child(2) {
+            display: block;
+        }
+    }
+}
+
+.hamburger {
+    display: none;
+    width: 33px;
+    height: 27.82px;
+
+    >img:nth-child(2) {
+        display: none;
+    }
+
+    &.hover {
+        >img:nth-child(1) {
+            display: none;
+        }
+
+        >img:nth-child(2) {
+            display: block;
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+}
+
+.mobile-dropdown-menu {
+    height: 252px;
+    width: 238px;
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+    border-radius: 32px;
+    border: solid 1px #3DCFB6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    ul {
+        width: 83px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        li {
+            font-family: Fira Code;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 23.62px;
+            letter-spacing: -0.03em;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+
+            &:hover {
+                color: #3DCFB6;
+            }
+        }
+    }
+
+    .language-switch {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+
+        span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+
+            &.active {
+                background-color: #3DCFB6;
+            }
+
+            &:hover {
+                background-color: rgba(61, 207, 182, 0.5);
+            }
+        }
+    }
+}
+
+.mobile-dropdown-menu ul li {
+    font-family: 'Fira Code', monospace;
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    transition: color 0.3s;
+
+    &:hover {
+        color: #3DCFB6;
+    }
+
+    &:hover::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 6px;
+        background-color: #3DCFB6;
+        border-radius: 50%;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 6px;
+        background-color: #3DCFB6;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+}
+
+
+
+@media (max-width: 790px) {
+    .header-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0px 16px;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
     }
 }

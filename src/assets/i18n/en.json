@@ -41,7 +41,7 @@
     "CONTACT_SUBTITLE_2": "together",
     "CONTACT_QUESTION": "Got a problem to solve?",
     "CONTACT_DESCRIPTION": "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.",
-    "CONTACT_TALK": "Need a Frontend developer?<span> Let's talk</span>",
+    "CONTACT_TALK": "Need a Frontend developer?<span class='talk'> Let's talk</span>",
     "FORM_NAME_LABEL": "What's your name?",
     "FORM_NAME_PLACEHOLDER": "Your name goes here",
     "FORM_NAME_ERROR": "Please enter your name.",

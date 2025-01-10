@@ -1,34 +1,27 @@
 <div class="bg-color">
     <div class="above-the-fold">
-        <h4>{{ 'TITLE1' | translate }}</h4>
-        <h1>{{ 'NAME' | translate }}</h1>
-        <div>
-            <button (click)="scrollToSection('projects')"><span>{{ 'CHECK_WORK' | translate }}</span></button>
-            <button (click)="scrollToSection('contact-me')">{{ 'CONTACT_ME' | translate }}</button>
-        </div>
-        <div class="banner">
-            <div class="scrolling-text">
-                <div class="text-container">
-                    <span class="distance-point">•</span>
-                    <ng-container *ngFor="let text of scrollingTexts; let isLast = last">
-                        <span class="banner-text">{{ text }}</span>
-                        <span *ngIf="!isLast" class="distance-point">•</span>
-                    </ng-container>
-                    <span class="distance-point">•</span>
-                    <ng-container *ngFor="let text of scrollingTexts; let isLast = last">
-                        <span class="banner-text">{{ text }}</span>
-                        <span *ngIf="!isLast" class="distance-point">•</span>
-                    </ng-container>
-                </div>
+        <div class="title">
+            <h4>{{ 'TITLE1' | translate }}</h4>
+            <h1>{{ 'NAME' | translate }}</h1>
+            <div>
+                <button (click)="scrollToSection('projects')"><span>{{ 'CHECK_WORK' | translate }}</span></button>
+                <button (click)="scrollToSection('contact-me')">{{ 'CONTACT_ME' | translate }}</button>
             </div>
         </div>
-
-        <div>
+        <div class="links">
             <div class="right-lateral">
                 <div>
                     <a href="mailto:gunes.kenan93@gmail.com">{{ 'EMAIL' | translate }}</a>
                 </div>
-                <div class="logo">
+                <div class="mail">
+                    <a href="mailto:gunes.kenan93@gmail.com">
+                        <img src="./../../../assets/img/above-the-fold/mail.png" alt="" class="normal">
+                    </a>
+                    <a href="mailto:gunes.kenan93@gmail.com">
+                        <img src="./../../../assets/img/above-the-fold/mail-hover.png" alt="" class="hover">
+                    </a>
+                </div>
+                <div class="git">
                     <a href="">
                         <img src="./../../../assets/img/above-the-fold/github.png" alt="" class="normal">
                     </a>
@@ -36,7 +29,7 @@
                         <img src="./../../../assets/img/above-the-fold/github-hover.png" alt="" class="hover">
                     </a>
                 </div>
-                <div class="logo">
+                <div class="linkedin">
                     <a href="https://www.linkedin.com/in/kenan-g%C3%BCnes-0a040033b/">
                         <img src="./../../../assets/img/above-the-fold/linkedin.png" alt="" class="normal">
                     </a>
@@ -47,11 +40,27 @@
                 <div></div>
             </div>
             <div class="left-lateral">
-                <a href="#">
+                <a (click)="scrollToSection('about-me')">
                     <img [src]="arrowImages[currentArrowIndex]" alt="Arrow Animation">
                 </a>
                 <div class="vertical-line-left"></div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="banner">
+    <div class="scrolling-text">
+        <div class="text-container">
+            <span class="distance-point">•</span>
+            <ng-container *ngFor="let text of scrollingTexts; let isLast = last">
+                <span class="banner-text">{{ text }}</span>
+                <span *ngIf="!isLast" class="distance-point">•</span>
+            </ng-container>
+            <span class="distance-point">•</span>
+            <ng-container *ngFor="let text of scrollingTexts; let isLast = last">
+                <span class="banner-text">{{ text }}</span>
+                <span *ngIf="!isLast" class="distance-point">•</span>
+            </ng-container>
         </div>
     </div>
 </div>

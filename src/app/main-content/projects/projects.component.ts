@@ -18,10 +18,10 @@ export class ProjectsComponent {
       id: 1,
       title: 'Join',
       description: 'Ein Projekt für Benutzerregistrierung.',
-      technologies: ['Angular', 'TypeScript', 'HTML'],
+      technologies: ['HTML', 'CSS', 'Angular', 'Typescript', 'Firebase'],
       githubLink: 'https://github.com/username/join',
       liveLink: 'https://join.kenan-günes.de',
-      image: './../../../assets/img/project/join.png',
+      image: './../../../assets/img/project/join-dialog.png',
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ export class ProjectsComponent {
       technologies: ['HTML', 'CSS', 'JavaScript'],
       githubLink: 'https://github.com/username/el-pollo-loco',
       liveLink: 'https://el-pollo-loco.kenan-günes.de',
-      image: './../../../assets/img/project/el-pollo.png',
+      image: './../../../assets/img/project/el-pollo-dialog.png',
     },
   ];
   

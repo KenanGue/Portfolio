@@ -1,5 +1,11 @@
+.formular {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
 .form {
-    width: 616px;
 
     >div:nth-child(4) {
         display: flex;
@@ -32,7 +38,8 @@
             text-align: center;
             line-height: 20px;
         }
-        >div{
+
+        >div {
             >p {
                 font-family: "karla";
                 font-size: 15px;
@@ -67,7 +74,8 @@
             line-height: 21.6px;
             text-underline-position: auto;
             text-decoration-skip-ink: none;
-            &:hover{
+
+            &:hover {
                 color: #3DCFB6;
                 border: 1px solid #3DCFB6;
                 cursor: pointer;
@@ -77,7 +85,6 @@
 }
 
 .name {
-    width: 584px;
     height: 131px;
     display: flex;
     flex-direction: column;
@@ -118,7 +125,6 @@
 }
 
 .email {
-    width: 584;
     height: 131px;
     display: flex;
     flex-direction: column;
@@ -157,7 +163,6 @@
 }
 
 .help {
-    width: 584px;
     height: 131px;
     display: flex;
     flex-direction: column;
@@ -206,8 +211,23 @@
     text-decoration: none;
     text-decoration-skip-ink: none;
     color: #3DCFB6;
-    &:hover{
+
+    &:hover {
         color: #FFFFFF;
     }
-  }
-  
+}
+
+@media (max-width: 1200px) {
+    .form {
+        display: flex;
+        flex-direction: column;
+        width: 568px;
+    }
+}
+
+@media (max-width: 790px) {
+    .form {
+        width: 100%;
+        padding: 0px 16px;
+    }
+}

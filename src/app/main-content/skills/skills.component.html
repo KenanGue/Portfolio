@@ -17,9 +17,12 @@
             </div>
         </div>
         <div class="skill-icons">
-            <div *ngFor="let skill of skillData" class="skill-icon">
+            <div *ngFor="let skill of skillData" class="skill-icon"
+                [class.growth-mindset]="skill.description === 'Growth mindset'">
                 <img [src]="skill.icon" alt="{{ skill.description }} Icon" />
                 <p>{{ skill.description }}</p>
+                <img *ngIf="skill.description === 'Growth mindset'" src="../../../assets/img/skills/popup.png"
+                    alt="Growth mindset popup" class="popup-image" />
             </div>
         </div>
     </div>

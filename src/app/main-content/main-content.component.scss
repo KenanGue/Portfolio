@@ -10,7 +10,15 @@ margin: 0;
 .contact{
     display: flex;
     justify-content: space-between;
-    
-width: 1440px;
-padding: 96px 96px 96px 96px;
+    width: 1440px;
+    padding: 96px 96px 96px 96px;
+}
+
+
+@media (max-width: 1200px) {
+    .contact{
+        flex-direction: column;
+        width: 100%;
+        padding: 96px 16px 96px 16px;
+    }
 }

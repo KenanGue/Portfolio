@@ -79,12 +79,52 @@
             text-decoration-skip-ink: none;
             color: #ffffff;
 
-            >span {
-                color: #3DCFB6;
-            }
         }
     }
 }
 
+:host ::ng-deep .talk {
+    color: #3DCFB6;
+}
+@media (max-width: 1200px) {
+    .contact-me {
+        justify-content: center;
+    }
 
+    .text {
+        height: unset !important;
+    }
+}
 
+@media (max-width: 790px) {
+    .contact-me {
+        width: 100%;
+    }
+
+    .text {
+        width: 90%;
+
+        >div:nth-child(1) {
+            width: 90%;
+
+            >h2{
+                font-size: 18px;
+            }
+
+            >h1{
+                font-size: 56px;
+                line-height: 56px;
+
+            }
+        }
+
+        >div:nth-child(2) {
+            width: 100%;
+            margin-top: 24px;
+
+            >p {
+                width: unset !important;
+            }
+        }
+    }
+}
