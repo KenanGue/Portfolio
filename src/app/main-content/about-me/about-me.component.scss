@@ -154,13 +154,9 @@
 
             img:nth-child(2) {
                 display: flex;
-                /* Aktiviert Flexbox */
                 justify-content: center;
-                /* Zentriert das Bild horizontal */
                 align-items: center;
-                /* Zentriert das Bild vertikal */
                 flex-direction: column;
-                /* Optional: Falls weitere Inhalte unter dem Bild stehen */
                 width: 100%;
                 height: unset;
                 border-radius: 30px;
@@ -195,6 +191,32 @@
             font-size: 16px;
             font-weight: 400;
             line-height: 19.2px;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .about-me {
+        div:nth-child(2) {
+            .about-me-description {
+                >p:nth-child(1) {
+                    font-size: 48px;
+                }
+
+                >p:nth-child(2) {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 16.2px;
+                }
+
+                >p:nth-child(3),
+                >p:nth-child(4),
+                >p:nth-child(5) {
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 16.2px;
+                }
+            }
         }
     }
 }
