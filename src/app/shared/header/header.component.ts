@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,12 +9,22 @@ import { CommonModule } from '@angular/common';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   currentLanguage: string = 'en';
   menuOpen: boolean = false;
 
-  constructor(private elementRef: ElementRef, private translate: TranslateService) {
-    this.translate.setDefaultLang(this.currentLanguage);
+  constructor(private elementRef: ElementRef, private translate: TranslateService) {}
+
+  ngOnInit(): void {
+    // Lade gespeicherte Sprache aus localStorage
+    const savedLanguage = localStorage.getItem('selectedLanguage');
+    if (savedLanguage) {
+      this.currentLanguage = savedLanguage;
+      this.translate.use(this.currentLanguage);
+    } else {
+      // Standard auf Englisch
+      this.translate.setDefaultLang(this.currentLanguage);
+    }
   }
 
   logo() {
@@ -60,14 +70,10 @@ export class HeaderComponent {
   }
 
   switchButton(): void {
-    const switchElements = this.elementRef.nativeElement.querySelectorAll('.language-switch div');
     this.currentLanguage = this.currentLanguage === 'en' ? 'de' : 'en';
-    switchElements.forEach((switchElement: any) => {
-      switchElement.querySelector('img:nth-child(1)').style.display = this.currentLanguage === 'en' ? 'block' : 'none';
-      switchElement.querySelector('img:nth-child(2)').style.display = this.currentLanguage === 'de' ? 'block' : 'none';
-    });
-
     this.translate.use(this.currentLanguage);
+
+    localStorage.setItem('selectedLanguage', this.currentLanguage);
   }
 
   scrollToSection(sectionId: string): void {

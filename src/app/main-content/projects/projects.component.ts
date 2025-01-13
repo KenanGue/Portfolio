@@ -33,9 +33,9 @@ export class ProjectsComponent {
       image: './../../../assets/img/project/el-pollo-dialog.png',
     },
   ];
-  
 
-  constructor(private translate: TranslateService) {}
+
+  constructor(private translate: TranslateService) { }
 
   ngOnInit(): void {
     this.loadProjectTranslations();
@@ -58,16 +58,19 @@ export class ProjectsComponent {
   }
 
   openDialog(project: any): void {
+    console.log('Dialog geöffnet:', project);
     this.currentProject = project;
     this.isDialogOpen = true;
-    document.body.classList.add('dialog-open');
+    document.body.style.overflow = 'hidden';
   }
 
   closeDialog(): void {
+    console.log('Dialog geschlossen');
     this.currentProject = null;
     this.isDialogOpen = false;
-    document.body.classList.remove('dialog-open');
+    document.body.style.overflow = '';
   }
+
 
   goToLink(url: string): void {
     if (url) {

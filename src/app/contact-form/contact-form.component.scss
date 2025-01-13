@@ -14,29 +14,36 @@
         padding-top: 32px;
 
         >input[type="checkbox"] {
-            appearance: none;
-            -webkit-appearance: none;
-            background-color: transparent;
-            border: 2px solid #3DCFB6;
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-            cursor: pointer;
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            z-index: -1;
         }
 
-        >input[type="checkbox"]:checked {
-            background-color: #3DCFB6;
-            border-color: #3DCFB6;
-            position: relative;
-        }
-
-        >input[type="checkbox"]:checked::before {
-            content: '✔';
+        >label {
             display: block;
-            color: white;
-            font-size: 14px;
-            text-align: center;
-            line-height: 20px;
+            width: 24px;
+            height: 24px;
+            background: url('./../../assets/img/contact-me/checkbox.png') no-repeat center center;
+            background-size: contain;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        >label:hover {
+            background: url('./../../assets/img/contact-me/checkbox_hover.png') no-repeat center center;
+            background-size: contain;
+        }
+
+        >input[type="checkbox"]:checked+label {
+            background: url('./../../assets/img/contact-me/checked.png') no-repeat center center;
+            background-size: contain;
+        }
+
+        >input[type="checkbox"]:checked+label:hover {
+            background: url('./../../assets/img/contact-me/checked_hover.png') no-repeat center center;
+            background-size: contain;
         }
 
         >div {
@@ -80,7 +87,13 @@
                 border: 1px solid #3DCFB6;
                 cursor: pointer;
             }
+            
         }
+        button:disabled {
+            background-color: #cccccc00;
+            color: #666;
+            cursor: not-allowed;
+          }
     }
 }
 
@@ -111,6 +124,7 @@
 
     >input {
         border: none;
+        outline: none;
         background-color: transparent;
         font-family: "karla";
         font-size: 18px;
@@ -149,6 +163,7 @@
 
     >input {
         border: none;
+        outline: none;
         background-color: transparent;
         font-family: "karla";
         font-size: 18px;
@@ -189,6 +204,7 @@
 
     >input {
         border: none;
+        outline: none;
         background-color: transparent;
         font-family: "karla";
         font-size: 18px;
@@ -228,6 +244,51 @@
 @media (max-width: 790px) {
     .form {
         width: 100%;
-        padding: 0px 16px;
+    }
+}
+
+@media (max-width: 790px) {
+    .form {
+        >div:nth-child(4) {
+            >label {
+                width: 32px;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    :host ::ng-deep .privacy-link {
+        font-size: 13px !important;
+    }
+
+    .form {
+        width: 90%;
+
+        >div:nth-child(4) {
+            >label {
+                width: 40px;
+            }
+
+            >div {
+                >p {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    .help,
+    .email,
+    .name {
+        >div {
+            >p {
+                font-size: 16px;
+            }
+        }
+
+        >input {
+            font-size: 14px;
+        }
     }
 }

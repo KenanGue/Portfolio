@@ -1,80 +1,81 @@
 <div class="bg-color">
     <div id="projects" class="portfolio-projects">
-        <div>
-            <h2>{{ 'PROJECTS_TITLE' | translate }}</h2>
-            <h1>{{ 'PROJECTS_SUBTITLE' | translate }}</h1>
-        </div>
-        <div>
-            <p>{{ 'PROJECTS_INTRO' | translate }}</p>
-        </div>
-        <div class="projects">
-            <div class="hover-join" (click)="openDialog(projects[0])">
-                <div class="single-project-join">
-                    <div>
-                        <p>{{ projects[0].title }}</p>
-                    </div>
-                    <div>
-                        Angular <span class="separator">|</span> TypeScript <span class="separator">|</span> HTML <span class="separator">|</span> CSS <span class="separator">|</span> Firebase
-                    </div>
-                </div>
-                <div>
-                    <img src="./../../../assets/img/project/join.png" alt="">
-                </div>
+      <div>
+        <h2>{{ 'PROJECTS_TITLE' | translate }}</h2>
+        <h1>{{ 'PROJECTS_SUBTITLE' | translate }}</h1>
+      </div>
+      <div>
+        <p>{{ 'PROJECTS_INTRO' | translate }}</p>
+      </div>
+      <div class="projects">
+        <div class="hover-join" (click)="openDialog(projects[0])">
+          <div class="single-project-join">
+            <div>
+              <p>{{ projects[0].title }}</p>
             </div>
-            <div class="hover-game" (click)="openDialog(projects[1])">
-                <div class="single-project-game">
-                    <div>
-                        <p>{{ projects[1].title }}</p>
-                    </div>
-                    <div>
-                        HTML <span class="separator">|</span> CSS <span class="separator">|</span> JavaScript
-                    </div>
-                </div>
-                <div>
-                    <img class="el-pollo" src="./../../../assets/img/project/el-pollo.png" alt="">
-                </div>
+            <div>
+              Angular <span class="separator">|</span> TypeScript <span class="separator">|</span> HTML <span class="separator">|</span> CSS <span class="separator">|</span> Firebase
             </div>
+          </div>
+          <div>
+            <img src="./../../../assets/img/project/join.png" alt="Join Project">
+          </div>
         </div>
+        <div class="hover-game" (click)="openDialog(projects[1])">
+          <div class="single-project-game">
+            <div>
+              <p>{{ projects[1].title }}</p>
+            </div>
+            <div>
+              HTML <span class="separator">|</span> CSS <span class="separator">|</span> JavaScript
+            </div>
+          </div>
+          <div>
+            <img class="el-pollo" src="./../../../assets/img/project/el-pollo.png" alt="El Pollo Loco">
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-
-<div class="overlay" (click)="closeDialog()">
-    <div class="dialog-container" *ngIf="isDialogOpen">
-        <div class="dialog-content">
-            <div class="left-content">
-                <div>
-                    <h1>0{{ currentProject?.id }}</h1>
-                    <h2>{{ currentProject?.title }}</h2>
-                </div>
-                <div>
-                    <h3>{{ 'PROJECTS_WHAT' | translate }}</h3>
-                    <p>{{ currentProject?.description }}</p>
-                    <div>
-                        <div *ngFor="let tech of currentProject?.technologies">
-                            <img [src]="'./../../../assets/img/project/' + tech.toLowerCase() + '.png'" alt="{{ tech }}">
-                            {{ tech }}
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <button (click)="goToLink(currentProject.githubLink)">
-                        {{ 'PROJECTS_GITHUB' | translate }}
-                        <img src="./../../../assets/img/project/arrow_outward _green.png">
-                    </button>
-                    <button (click)="goToLink(currentProject.liveLink)">
-                        {{ 'PROJECTS_LIVE' | translate }}
-                        <img src="./../../../assets/img/project/arrow_outward _green.png">
-                    </button>
-                </div>
+  </div>
+  
+  <div class="overlay" *ngIf="isDialogOpen" (click)="closeDialog()">
+    <div class="dialog-container" (click)="$event.stopPropagation()">
+      <div class="dialog-content">
+        <div class="left-content">
+          <div>
+            <h1>0{{ currentProject?.id }}</h1>
+            <h2>{{ currentProject?.title }}</h2>
+          </div>
+          <div>
+            <h3>{{ 'PROJECTS_WHAT' | translate }}</h3>
+            <p>{{ currentProject?.description }}</p>
+            <div>
+              <div *ngFor="let tech of currentProject?.technologies">
+                <img [src]="'./../../../assets/img/project/' + tech.toLowerCase() + '.png'" alt="{{ tech }}">
+                {{ tech }}
+              </div>
             </div>
-            <div class="right-content">
-                <button class="close-button" (click)="closeDialog()"></button>
-                <img [src]="currentProject?.image" alt="{{ currentProject?.title }}" class="project-image">
-                <div (click)="nextProject(); $event.stopPropagation()">
-                    <p>{{ 'PROJECTS_NEXT' | translate }}</p>
-                    <img src="./../../../assets/img/project/arrow_forward.png" alt="">
-                </div>
-            </div>
+          </div>
+          <div>
+            <button (click)="goToLink(currentProject.githubLink)">
+              {{ 'PROJECTS_GITHUB' | translate }}
+              <img src="./../../../assets/img/project/arrow_outward _green.png">
+            </button>
+            <button (click)="goToLink(currentProject.liveLink)">
+              {{ 'PROJECTS_LIVE' | translate }}
+              <img src="./../../../assets/img/project/arrow_outward _green.png">
+            </button>
+          </div>
         </div>
+        <div class="right-content">
+          <button class="close-button" (click)="closeDialog()"></button>
+          <img [src]="currentProject?.image" alt="{{ currentProject?.title }}" class="project-image">
+          <div (click)="nextProject(); $event.stopPropagation()">
+            <p>{{ 'PROJECTS_NEXT' | translate }}</p>
+            <img src="./../../../assets/img/project/arrow_forward.png" alt="Next">
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  

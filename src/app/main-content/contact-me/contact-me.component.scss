@@ -31,6 +31,7 @@
             text-decoration-skip-ink: none;
             color: #3DCFB6;
             margin: 0;
+            margin-bottom: 24px;
         }
     }
 
@@ -53,8 +54,7 @@
             text-underline-position: auto;
             text-decoration-skip-ink: none;
             color: #3DCFB6;
-            width: 568px;
-            height: 132;
+            width: 100%;
         }
 
         >p:nth-child(2) {
@@ -86,6 +86,7 @@
 :host ::ng-deep .talk {
     color: #3DCFB6;
 }
+
 @media (max-width: 1200px) {
     .contact-me {
         justify-content: center;
@@ -93,12 +94,14 @@
 
     .text {
         height: unset !important;
+        width: 568px;
     }
 }
 
 @media (max-width: 790px) {
     .contact-me {
         width: 100%;
+        justify-content: unset;
     }
 
     .text {
@@ -107,11 +110,11 @@
         >div:nth-child(1) {
             width: 90%;
 
-            >h2{
+            >h2 {
                 font-size: 18px;
             }
 
-            >h1{
+            >h1 {
                 font-size: 56px;
                 line-height: 56px;
 
@@ -124,6 +127,53 @@
 
             >p {
                 width: unset !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .text {
+        >div:nth-child(1) {
+            >h1 {
+                font-size: 48px;
+                line-height: 40px;
+
+            }
+        }
+    }
+}
+
+
+@media (max-width: 423px) {
+    .contact-me {
+        justify-content: center;
+    }
+
+    .text {
+        >div:nth-child(1) {
+            width: 90%;
+
+            >h2 {
+                font-size: 18px;
+            }
+
+            >h1 {
+                font-size: 40px;
+                line-height: 40px;
+
+            }
+        }
+
+        >div:nth-child(2) {
+            >div:nth-child(1) {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            >p:nth-child(3),
+            >p:nth-child(2) {
+                font-size: 14px;
             }
         }
     }

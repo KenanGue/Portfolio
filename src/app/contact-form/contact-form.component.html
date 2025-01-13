@@ -1,50 +1,83 @@
 <form class="formular" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate>
   <div class="form">
+    <!-- Name -->
     <div class="name">
       <div>
         <p>{{ 'FORM_NAME_LABEL' | translate }}</p>
       </div>
-      <input type="text" [placeholder]="'FORM_NAME_PLACEHOLDER' | translate" name="name" [(ngModel)]="contactData.name"
-        required>
-      <div *ngIf="contactForm.submitted && contactForm.controls['name']?.invalid" style="color:red;">
+      <input
+        type="text"
+        [placeholder]="'FORM_NAME_PLACEHOLDER' | translate"
+        name="name"
+        [(ngModel)]="contactData.name"
+        required
+        #name="ngModel"
+      />
+      <div *ngIf="name.touched && name.invalid" style="color:red;">
         {{ 'FORM_NAME_ERROR' | translate }}
       </div>
     </div>
 
+    <!-- Email -->
     <div class="email">
       <div>
         <p>{{ 'FORM_EMAIL_LABEL' | translate }}</p>
       </div>
-      <input type="email" [placeholder]="'FORM_EMAIL_PLACEHOLDER' | translate" name="email"
-        [(ngModel)]="contactData.email" required email pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-      <div *ngIf="contactForm.submitted && contactForm.controls['email']?.invalid" style="color:red;">
+      <input
+        type="email"
+        [placeholder]="'FORM_EMAIL_PLACEHOLDER' | translate"
+        name="email"
+        [(ngModel)]="contactData.email"
+        required
+        email
+        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+        #email="ngModel"
+      />
+      <div *ngIf="email.touched && email.invalid" style="color:red;">
         {{ 'FORM_EMAIL_ERROR' | translate }}
       </div>
     </div>
 
+    <!-- Message -->
     <div class="help">
       <div>
         <p>{{ 'FORM_MESSAGE_LABEL' | translate }}</p>
       </div>
-      <input type="text" [placeholder]="'FORM_MESSAGE_PLACEHOLDER' | translate" name="message"
-        [(ngModel)]="contactData.message" required>
-      <div *ngIf="contactForm.submitted && contactForm.controls['message']?.invalid" style="color:red;">
+      <input
+        type="text"
+        [placeholder]="'FORM_MESSAGE_PLACEHOLDER' | translate"
+        name="message"
+        [(ngModel)]="contactData.message"
+        required
+        #message="ngModel"
+      />
+      <div *ngIf="message.touched && message.invalid" style="color:red;">
         {{ 'FORM_MESSAGE_ERROR' | translate }}
       </div>
     </div>
 
-    <div>
-      <input type="checkbox" name="privacyChecked" [(ngModel)]="privacyChecked" required>
+    <!-- Checkbox -->
+    <div class="custom-checkbox-wrapper">
+      <input
+        type="checkbox"
+        id="privacyChecked"
+        name="privacyChecked"
+        [(ngModel)]="privacyChecked"
+        required
+        #privacyCheckedField="ngModel"
+      />
+      <label for="privacyChecked" class="custom-checkbox"></label>
       <div>
         <p [innerHTML]="'FORM_PRIVACY_TEXT' | translate"></p>
-        <div *ngIf="contactForm.submitted && contactForm.controls['privacyChecked']?.invalid" style="color:red;">
+        <div *ngIf="privacyCheckedField.touched && privacyCheckedField.invalid" style="color:red;">
           {{ 'FORM_PRIVACY_ERROR' | translate }}
         </div>
       </div>
     </div>
 
+    <!-- Submit Button -->
     <div>
-      <button type="submit">{{ 'FORM_SUBMIT_BUTTON' | translate }}</button>
+      <button type="submit" [disabled]="!contactForm.valid">{{ 'FORM_SUBMIT_BUTTON' | translate }}</button>
     </div>
   </div>
 </form>

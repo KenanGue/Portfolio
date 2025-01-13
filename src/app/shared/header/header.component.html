@@ -4,8 +4,16 @@
       <div>
         <div class="language-switch">
           <div (click)="switchButton()">
-            <img src="./../../../assets/img/header/english.png" alt="English">
-            <img src="./../../../assets/img/header/deutsch.png" alt="Deutsch">
+            <img
+              *ngIf="currentLanguage === 'en'"
+              src="./../../../assets/img/header/english.png"
+              alt="English"
+            />
+            <img
+              *ngIf="currentLanguage === 'de'"
+              src="./../../../assets/img/header/deutsch.png"
+              alt="Deutsch"
+            />
           </div>
         </div>
       </div>
@@ -40,8 +48,16 @@
     </ul>
     <div class="language-switch">
       <div (click)="switchButton()">
-        <img src="./../../../assets/img/header/english.png" alt="English">
-        <img src="./../../../assets/img/header/deutsch.png" alt="Deutsch">
+        <img
+          *ngIf="currentLanguage === 'en'"
+          src="./../../../assets/img/header/english.png"
+          alt="English"
+        />
+        <img
+          *ngIf="currentLanguage === 'de'"
+          src="./../../../assets/img/header/deutsch.png"
+          alt="Deutsch"
+        />
       </div>
     </div>
   </div>

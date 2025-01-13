@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 96px 96px 96px 96px;
+    padding: 96px 96px 0px 96px;
     gap: 40px;
 
     .text-container {
@@ -164,7 +164,7 @@
     }
     
     >button {
-        width: 122px;
+        width: 40%;
         height: 48px;
         padding: 24px;
         gap: 10px;
@@ -192,7 +192,6 @@
 @media (max-width: 1200px) {
     .skills {
         flex-direction: column;
-        padding: unset !important;
     }
 
     .skill-icons {
@@ -234,6 +233,28 @@
 
         >p:nth-child(3) {
             font-size: 20px;
+        }
+    }
+}
+
+@media (max-width: 375px){
+    .skill-description {
+        >p:nth-child(1) {
+            font-size: 40px !important;
+            padding-bottom: 0;
+        }
+
+        >p:nth-child(2) {
+            font-size: 13px;
+        }
+
+        >p:nth-child(3) {
+            font-size: 14px;
+            padding-bottom: 0;
+        }
+       
+        >p:nth-child(4) {
+            font-size: 13px;
         }
     }
 }
