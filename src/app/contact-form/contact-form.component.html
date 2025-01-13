@@ -1,31 +1,28 @@
 <form class="formular" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate>
   <div class="form">
-    <!-- Name -->
     <div class="name">
       <div>
-        <p>{{ 'FORM_NAME_LABEL' | translate }}</p>
+        <p>{{ translate.translate('FORM_NAME_LABEL') }}</p>
       </div>
       <input
         type="text"
-        [placeholder]="'FORM_NAME_PLACEHOLDER' | translate"
+        [placeholder]="translate.translate('FORM_NAME_PLACEHOLDER')"
         name="name"
         [(ngModel)]="contactData.name"
         required
         #name="ngModel"
       />
       <div *ngIf="name.touched && name.invalid" style="color:red;">
-        {{ 'FORM_NAME_ERROR' | translate }}
+        {{ translate.translate('FORM_NAME_ERROR') }}
       </div>
     </div>
-
-    <!-- Email -->
     <div class="email">
       <div>
-        <p>{{ 'FORM_EMAIL_LABEL' | translate }}</p>
+        <p>{{ translate.translate('FORM_EMAIL_LABEL') }}</p>
       </div>
       <input
         type="email"
-        [placeholder]="'FORM_EMAIL_PLACEHOLDER' | translate"
+        [placeholder]="translate.translate('FORM_EMAIL_PLACEHOLDER')"
         name="email"
         [(ngModel)]="contactData.email"
         required
@@ -34,29 +31,25 @@
         #email="ngModel"
       />
       <div *ngIf="email.touched && email.invalid" style="color:red;">
-        {{ 'FORM_EMAIL_ERROR' | translate }}
+        {{ translate.translate('FORM_EMAIL_ERROR') }}
       </div>
     </div>
-
-    <!-- Message -->
     <div class="help">
       <div>
-        <p>{{ 'FORM_MESSAGE_LABEL' | translate }}</p>
+        <p>{{ translate.translate('FORM_MESSAGE_LABEL') }}</p>
       </div>
       <input
         type="text"
-        [placeholder]="'FORM_MESSAGE_PLACEHOLDER' | translate"
+        [placeholder]="translate.translate('FORM_MESSAGE_PLACEHOLDER')"
         name="message"
         [(ngModel)]="contactData.message"
         required
         #message="ngModel"
       />
       <div *ngIf="message.touched && message.invalid" style="color:red;">
-        {{ 'FORM_MESSAGE_ERROR' | translate }}
+        {{ translate.translate('FORM_MESSAGE_ERROR') }}
       </div>
     </div>
-
-    <!-- Checkbox -->
     <div class="custom-checkbox-wrapper">
       <input
         type="checkbox"
@@ -68,16 +61,14 @@
       />
       <label for="privacyChecked" class="custom-checkbox"></label>
       <div>
-        <p [innerHTML]="'FORM_PRIVACY_TEXT' | translate"></p>
+        <p [innerHTML]="translate.translate('FORM_PRIVACY_TEXT')"></p>
         <div *ngIf="privacyCheckedField.touched && privacyCheckedField.invalid" style="color:red;">
-          {{ 'FORM_PRIVACY_ERROR' | translate }}
+          {{ translate.translate('FORM_PRIVACY_ERROR') }}
         </div>
       </div>
     </div>
-
-    <!-- Submit Button -->
     <div>
-      <button type="submit" [disabled]="!contactForm.valid">{{ 'FORM_SUBMIT_BUTTON' | translate }}</button>
+      <button type="submit" [disabled]="!contactForm.valid">{{ translate.translate('FORM_SUBMIT_BUTTON') }}</button>
     </div>
   </div>
 </form>

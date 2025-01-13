@@ -2,35 +2,35 @@
     <div class="footer">
         <div>
             <img src="/assets/img/header/logo.png" alt="">
-            <p>{{ 'FOOTER_ROLE' | translate }}</p>
-            <p>{{ 'FOOTER_LOCATION' | translate }}</p>
+            <p>{{ translate.translate('FOOTER_ROLE') }}</p>
+            <p>{{ translate.translate('FOOTER_LOCATION') }}</p>
         </div>
         <div>
-            <p>{{ 'FOOTER_COPYRIGHT' | translate }}</p>
+            <p>{{ translate.translate('FOOTER_COPYRIGHT') }}</p>
         </div>
         <div>
-            <a href="">{{ 'FOOTER_GITHUB' | translate }}</a>
-            <a href="">{{ 'FOOTER_LINKEDIN' | translate }}</a>
-            <a href="">{{ 'FOOTER_EMAIL' | translate }}</a>
-            <a href="">{{ 'FOOTER_LEGAL_NOTICE' | translate }}</a>
+            <a href="">{{ translate.translate('FOOTER_GITHUB') }}</a>
+            <a href="">{{ translate.translate('FOOTER_LINKEDIN') }}</a>
+            <a href="">{{ translate.translate('FOOTER_EMAIL') }}</a>
+            <a href="">{{ translate.translate('FOOTER_LEGAL_NOTICE') }}</a>
         </div>
     </div>
     <div class="footer-mobile">
         <div>
             <div>
                 <img src="/assets/img/header/logo.png" alt="">
-                <p>{{ 'FOOTER_ROLE' | translate }}</p>
-                <p>{{ 'FOOTER_LOCATION' | translate }}</p>
+                <p>{{ translate.translate('FOOTER_ROLE') }}</p>
+                <p>{{ translate.translate('FOOTER_LOCATION') }}</p>
             </div>
             <div>
-                <a href="">{{ 'FOOTER_GITHUB' | translate }}</a>
-                <a href="">{{ 'FOOTER_LINKEDIN' | translate }}</a>
-                <a href="">{{ 'FOOTER_EMAIL' | translate }}</a>
-                <a href="">{{ 'FOOTER_LEGAL_NOTICE' | translate }}</a>
+                <a >{{ translate.translate('FOOTER_GITHUB') }}</a>
+                <a >{{ translate.translate('FOOTER_LINKEDIN') }}</a>
+                <a >{{ translate.translate('FOOTER_EMAIL') }}</a>
+                <a [routerLink]="'/imprint'">{{ translate.translate('FOOTER_LEGAL_NOTICE') }}</a>
             </div>
         </div>
         <div>
-            <p>{{ 'FOOTER_COPYRIGHT' | translate }}</p>
+            <p>{{ translate.translate('FOOTER_COPYRIGHT') }}</p>
         </div>
     </div>
 </div>

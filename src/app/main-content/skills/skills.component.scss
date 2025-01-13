@@ -40,8 +40,6 @@
         height: 503px;
         width: 568px;
 
-
-
         .skill-icon {
             display: flex;
             flex-direction: column;
@@ -50,8 +48,6 @@
             border-radius: 8px;
             transition: transform 0.3s;
             height: 116px;
-
-
         }
 
         img {
@@ -99,7 +95,6 @@
     }
 }
 
-
 .skill-description {
     border: 1px solid #3DCFB6;
     border-radius: 30px;
@@ -135,7 +130,6 @@
         margin: 0;
         padding-bottom: 32px;
     }
-
 
     >p:nth-child(3) {
         font-family: "fira code";

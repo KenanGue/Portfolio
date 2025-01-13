@@ -1,16 +1,16 @@
 import { Component, ElementRef } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslationService } from '../../translation.service';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
 
-  constructor(private elementRef: ElementRef) { }
+  constructor(private elementRef: ElementRef, public translate: TranslationService) { }
 
   onMouseOver() {
     this.elementRef.nativeElement.querySelector('.image-container').classList.add('hover');

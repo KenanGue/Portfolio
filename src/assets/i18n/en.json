@@ -51,7 +51,7 @@
   "FORM_MESSAGE_LABEL": "How can I help you?",
   "FORM_MESSAGE_PLACEHOLDER": "Hello Kenan, I am interested in...",
   "FORM_MESSAGE_ERROR": "Please enter a message.",
-  "FORM_PRIVACY_TEXT": "I've read the <a href='#' class='privacy-link'>privacy policy</a> and agree to the processing of my data as outlined.",
+  "FORM_PRIVACY_TEXT": "I've read the <a href='imprint' class='privacy-link'>privacy policy</a> and agree to the processing of my data as outlined.",
   "FORM_PRIVACY_ERROR": "You must agree to the privacy policy.",
   "FORM_SUBMIT_BUTTON": "Say Hello ;)",
   "FOOTER_ROLE": "Web Developer",

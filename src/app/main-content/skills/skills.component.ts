@@ -1,16 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslationService } from '../../translation.service';
 
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
+
+  constructor(public translate: TranslationService) {}
+
   skillData = [
     { icon: '/assets/img/skills/html.png', description: 'HTML' },
     { icon: '/assets/img/skills/css.png', description: 'CSS' },

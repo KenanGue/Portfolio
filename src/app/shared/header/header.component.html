@@ -17,9 +17,9 @@
           </div>
         </div>
       </div>
-      <p (click)="scrollToSection('about-me')">{{ 'MENU1' | translate }}</p>
-      <p (click)="scrollToSection('skills')">{{ 'MENU2' | translate }}</p>
-      <p (click)="scrollToSection('projects')">{{ 'MENU3' | translate }}</p>
+      <p (click)="scrollToSection('about-me')">{{ translate.translate('MENU1') }}</p>
+      <p (click)="scrollToSection('skills')">{{ translate.translate('MENU2') }}</p>
+      <p (click)="scrollToSection('projects')">{{ translate.translate('MENU3') }}</p>
     </div>
     <div class="header-logo" (mouseover)="logo()" (mouseout)="logoHover()">
       <img src="/assets/img/header/logo.png" alt="">
