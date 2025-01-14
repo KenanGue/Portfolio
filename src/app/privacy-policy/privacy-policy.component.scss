@@ -54,8 +54,6 @@
                 margin: 0px 96px;
                 margin-bottom: 16px;
                 margin-top: 24px;
-
-
             }
 
             >h4 {
@@ -122,16 +120,39 @@
 
                 >h2 {
                     font-size: 24px;
-                    margin: 0px 96px;
-                    margin-bottom: 16px;
-                    margin-top: 24px;
                 }
 
                 >h3 {
                     font-size: 16px;
-                    margin: 0px 96px;
-                    margin-bottom: 16px;
-                    margin-top: 24px;
+                }
+
+                >h4 {
+                    font-size: 14px;
+                }
+
+                >p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 904px) {
+    .legal {
+        >div:nth-child(2) {
+            >div:nth-child(2) {
+                >h1 {
+                    font-size: 40px;
+                    
+                }
+
+                >h2 {
+                    font-size: 14px;
+                }
+
+                >h3 {
+                    font-size: 16px;
                 }
 
                 >h4 {
@@ -150,39 +171,63 @@
     }
 }
 
-@media (max-width: 904px) {
+@media (max-width: 790px) {
     .legal {
         >div:nth-child(2) {
+
+            >div:nth-child(1) {
+                right: 16px;
+            }
+            >div:nth-child(2) {
+                
+                >p,
+                >h4,
+                >h3,
+                >h2,
+                >h1 {
+                    margin-left: 16px;
+                    margin-right: 16px;                    
+                }
+
+              
+
+
+            }
+        }
+    }
+}
+
+@media (max-width: 570px) {
+    .legal {
+        >div:nth-child(2) {
+
+            >div:nth-child(1) {
+                right: 16px;
+            }
             >div:nth-child(2) {
                 >h1 {
-                    font-size: 40px;
-                    margin: 96px 96px;
+                    font-size: 20px;
+                    margin-bottom: 0;
                 }
 
                 >h2 {
-                    font-size: 14px;
-                    margin: 0px 96px;
-                    margin-bottom: 16px;
-                    margin-top: 24px;
+                    font-size: 12px;
+                    margin-top: 0;
+                    margin-bottom: 0;
                 }
 
                 >h3 {
-                    font-size: 16px;
-                    margin: 0px 96px;
-                    margin-bottom: 16px;
-                    margin-top: 24px;
+                    font-size: 12px;
+                    margin-top: 0;
                 }
 
                 >h4 {
-                    font-size: 14px;
-                    margin: 0px 96px;
-                    margin-top: 24px;
+                    font-size: 12px;
+                    margin-top: 16px;
                 }
 
                 >p {
-                    font-size: 14px;
-                    line-height: 24px;
-                    margin: 0px 96px;
+                    font-size: 12px;
                 }
             }
         }
