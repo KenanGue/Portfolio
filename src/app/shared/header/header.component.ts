@@ -1,33 +1,31 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { TranslationService } from '../../translation.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [TranslateModule, CommonModule],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   currentLanguage: string = 'en';
   menuOpen: boolean = false;
 
-  constructor(private elementRef: ElementRef, public translate: TranslationService) {}
+  constructor(
+    private elementRef: ElementRef,
+    private translate: TranslateService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    if (typeof localStorage !== 'undefined') {
-      const savedLanguage = localStorage.getItem('selectedLanguage');
-      if (savedLanguage) {
-        this.currentLanguage = savedLanguage;
-        this.translate.setLanguage(this.currentLanguage);
-      } else {
-        this.translate.setLanguage(this.currentLanguage);
-      }
-    } else {
-      console.warn('localStorage is not available in this environment.');
-      this.translate.setLanguage(this.currentLanguage); 
-    }
+    this.translate.setDefaultLang(this.currentLanguage);
+  }
+
+  showLinks(): boolean {
+    return this.router.url !== '/imprint' && this.router.url !== '/privacy-policy';
   }
 
   logo() {
@@ -74,13 +72,7 @@ export class HeaderComponent implements OnInit {
 
   switchButton(): void {
     this.currentLanguage = this.currentLanguage === 'en' ? 'de' : 'en';
-    this.translate.setLanguage(this.currentLanguage);
-  
-    if (typeof localStorage !== 'undefined') {
-      localStorage.setItem('selectedLanguage', this.currentLanguage);
-    } else {
-      console.warn('localStorage is not available, changes will not persist.');
-    }
+    this.translate.use(this.currentLanguage);
   }
 
   scrollToSection(sectionId: string): void {

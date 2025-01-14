@@ -1,11 +1,11 @@
 <div class="bg-color">
     <div id="projects" class="portfolio-projects">
       <div>
-        <h2>{{ translate.translate('PROJECTS_TITLE') }}</h2>
-        <h1>{{ translate.translate('PROJECTS_SUBTITLE') }}</h1>
+        <h2>{{ 'PROJECTS_TITLE' | translate }}</h2>
+        <h1>{{ 'PROJECTS_SUBTITLE' | translate }}</h1>
       </div>
       <div>
-        <p>{{ translate.translate('PROJECTS_INTRO') }}</p>
+        <p>{{ 'PROJECTS_INTRO' | translate }}</p>
       </div>
       <div class="projects">
         <div class="hover-join" (click)="openDialog(projects[0])">
@@ -37,6 +37,7 @@
       </div>
     </div>
   </div>
+  
   <div class="overlay" *ngIf="isDialogOpen" (click)="closeDialog()">
     <div class="dialog-container" (click)="$event.stopPropagation()">
       <div class="dialog-content">
@@ -46,7 +47,7 @@
             <h2>{{ currentProject?.title }}</h2>
           </div>
           <div>
-            <h3>{{ translate.translate('PROJECTS_WHAT') }}</h3>
+            <h3>{{ 'PROJECTS_WHAT' | translate }}</h3>
             <p>{{ currentProject?.description }}</p>
             <div>
               <div *ngFor="let tech of currentProject?.technologies">
@@ -57,11 +58,11 @@
           </div>
           <div>
             <button (click)="goToLink(currentProject.githubLink)">
-              {{ translate.translate('PROJECTS_GITHUB') }}
+              {{ 'PROJECTS_GITHUB' | translate }}
               <img src="./../../../assets/img/project/arrow_outward _green.png">
             </button>
             <button (click)="goToLink(currentProject.liveLink)">
-              {{ translate.translate('PROJECTS_LIVE') }}
+              {{ 'PROJECTS_LIVE' | translate }}
               <img src="./../../../assets/img/project/arrow_outward _green.png">
             </button>
           </div>
@@ -70,7 +71,7 @@
           <button class="close-button" (click)="closeDialog()"></button>
           <img [src]="currentProject?.image" alt="{{ currentProject?.title }}" class="project-image">
           <div (click)="nextProject(); $event.stopPropagation()">
-            <p>{{ translate.translate('PROJECTS_NEXT') }}</p>
+            <p>{{ 'PROJECTS_NEXT' | translate }}</p>
             <img src="./../../../assets/img/project/arrow_forward.png" alt="Next">
           </div>
         </div>

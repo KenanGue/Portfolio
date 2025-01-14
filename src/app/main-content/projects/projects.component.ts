@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { TranslationService } from '../../translation.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
@@ -34,11 +34,13 @@ export class ProjectsComponent {
     },
   ];
 
-  constructor(public translate: TranslationService) {}
+
+  constructor(private translate: TranslateService) { }
 
   ngOnInit(): void {
     this.loadProjectTranslations();
 
+    // Aktualisiere Übersetzungen bei Sprachwechsel
     this.translate.onLangChange.subscribe(() => {
       this.loadProjectTranslations();
     });

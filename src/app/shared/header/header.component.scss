@@ -17,6 +17,8 @@
     justify-content: space-between;
     padding: 0px 96px;
 
+
+
     >div {
         display: flex;
         gap: 24px;
@@ -98,6 +100,8 @@
         }
     }
 }
+
+
 
 .mobile-logo {
     display: none;
@@ -262,6 +266,8 @@
         transition: opacity 0.3s ease;
     }
 }
+
+
 
 @media (max-width: 790px) {
     .header-mobile {

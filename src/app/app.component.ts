@@ -1,14 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet, Event } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, TranslateModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'] 
 })
-export class AppComponent {
-  title = 'portfolio';
+export class AppComponent implements OnInit {
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.router.events
+      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        if (event.url === '/privacy-policy') {
+          this.scrollToTop();
+        }
+      });
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 }

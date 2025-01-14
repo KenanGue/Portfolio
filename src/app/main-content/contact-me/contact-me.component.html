@@ -1,15 +1,16 @@
 <div id="contact-me" class="contact-me">
     <div class="text">
         <div>
-            <h2>{{ translate.translate('CONTACT_TITLE') }}</h2>
-            <h1>{{ translate.translate('CONTACT_SUBTITLE_1') }}</h1>
+            <h2>{{ 'CONTACT_TITLE' | translate }}</h2>
+            <h1>{{ 'CONTACT_SUBTITLE_1' | translate }}</h1>
+            <h1>{{ 'CONTACT_SUBTITLE_2' | translate }}</h1>
         </div>
         <div>
             <div>
-                <p>{{ translate.translate('CONTACT_QUESTION') }}</p>
+                <p>{{ 'CONTACT_QUESTION' | translate }}</p>
             </div>
-            <p>{{ translate.translate('CONTACT_DESCRIPTION') }}</p>
-            <p [innerHTML]="translate.translate('CONTACT_TALK')"></p>
+            <p>{{ 'CONTACT_DESCRIPTION' | translate }}</p>
+            <p [innerHTML]="'CONTACT_TALK' | translate"></p>
         </div>
     </div>
 </div>

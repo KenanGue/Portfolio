@@ -4,12 +4,12 @@ import { FooterComponent } from '../shared/footer/footer.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-imprint',
+  selector: 'app-privacy-policy',
   standalone: true,
   imports: [HeaderComponent, FooterComponent, RouterModule],
-  templateUrl: './imprint.component.html',
-  styleUrl: './imprint.component.scss'
+  templateUrl: './privacy-policy.component.html',
+  styleUrl: './privacy-policy.component.scss'
 })
-export class ImprintComponent {
+export class PrivacyPolicyComponent {
 
 }

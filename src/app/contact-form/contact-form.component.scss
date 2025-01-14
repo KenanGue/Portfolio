@@ -6,6 +6,7 @@
 }
 
 .form {
+
     >div:nth-child(4) {
         display: flex;
         align-items: center;
@@ -229,6 +230,7 @@
 
     &:hover {
         color: #FFFFFF;
+        cursor: pointer;
     }
 }
 

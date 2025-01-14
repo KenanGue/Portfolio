@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Inject, NgZone, OnInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { TranslationService } from '../../translation.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-above-the-fold',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './above-the-fold.component.html',
   styleUrl: './above-the-fold.component.scss',
 })
@@ -21,27 +21,30 @@ export class AboveTheFoldComponent implements OnInit {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private ngZone: NgZone,
-    public translate: TranslationService
+    private translate: TranslateService
   ) {}
 
   ngOnInit() {
     this.loadBannerTexts();
 
+    // Beobachte Sprachwechsel, um Texte dynamisch zu aktualisieren
     this.translate.onLangChange.subscribe(() => {
       this.loadBannerTexts();
     });
 
+    // Arrow-Animation nur im Browser starten
     if (isPlatformBrowser(this.platformId)) {
       this.ngZone.run(() => {
         setInterval(() => {
           this.currentArrowIndex =
             (this.currentArrowIndex + 1) % this.arrowImages.length;
-        }, 1000); 
+        }, 1000); // Wechsel alle 1 Sekunde
       });
     }
   }
 
   loadBannerTexts() {
+    // Lade Banner-Texte aus den Übersetzungsdateien
     this.translate.get('BANNER_TEXTS').subscribe((texts: string[]) => {
       this.scrollingTexts = texts;
     });
@@ -49,7 +52,7 @@ export class AboveTheFoldComponent implements OnInit {
 
   ngOnDestroy() {
     if (this.currentArrowIndex) {
-      clearInterval(this.currentArrowIndex); 
+      clearInterval(this.currentArrowIndex); // Speicherlecks vermeiden
     }
   }
 

@@ -2,18 +2,18 @@
     <div id="skills" class="skills">
         <div class="text-container">
             <div>
-                <h3>{{ translate.translate('SKILLS_TITLE') }}</h3>
+                <h3>{{ 'SKILLS_TITLE' | translate }}</h3>
             </div>
             <div class="skill-description">
-                <p>{{ translate.translate('SKILLS_DESCRIPTION') }}</p>
+                <p>{{ 'SKILLS_DESCRIPTION' | translate }}</p>
 
-                <p>{{ translate.translate('SKILLS_INTRO') }}</p>
+                <p>{{ 'SKILLS_INTRO' | translate }}</p>
 
-                <p [innerHTML]="translate.translate('SKILLS_ASK')"></p>
+                <p [innerHTML]="'SKILLS_ASK' | translate"></p>
 
-                <p>{{ translate.translate('SKILLS_CONTACT') }}</p>
+                <p>{{ 'SKILLS_CONTACT' | translate }}</p>
 
-                <button (click)="scrollToSection('contact-me')">{{ translate.translate('SKILLS_BUTTON') }}</button>
+                <button (click)="scrollToSection('contact-me')">{{ 'SKILLS_BUTTON' | translate }}</button>
             </div>
         </div>
         <div class="skill-icons">

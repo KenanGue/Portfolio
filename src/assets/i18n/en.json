@@ -51,7 +51,9 @@
   "FORM_MESSAGE_LABEL": "How can I help you?",
   "FORM_MESSAGE_PLACEHOLDER": "Hello Kenan, I am interested in...",
   "FORM_MESSAGE_ERROR": "Please enter a message.",
-  "FORM_PRIVACY_TEXT": "I've read the <a href='imprint' class='privacy-link'>privacy policy</a> and agree to the processing of my data as outlined.",
+  "FORM_PRIVACY_TEXT1": "I've read the",
+  "FORM_LEGAL_NOTICE": "privacy policy",
+  "FORM_PRIVACY_TEXT2": "and agree to the processing of my data as outlined.",
   "FORM_PRIVACY_ERROR": "You must agree to the privacy policy.",
   "FORM_SUBMIT_BUTTON": "Say Hello ;)",
   "FOOTER_ROLE": "Web Developer",
@@ -60,5 +62,5 @@
   "FOOTER_GITHUB": "Github",
   "FOOTER_LINKEDIN": "Linkedin",
   "FOOTER_EMAIL": "Email",
-  "FOOTER_LEGAL_NOTICE": "Legal Notice"
+  "FOOTER_LEGAL_NOTICE": "Imprint"
 }

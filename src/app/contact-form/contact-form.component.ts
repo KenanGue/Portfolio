@@ -2,12 +2,13 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { TranslationService } from '../translation.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslateModule, RouterModule],
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.scss']
 })
@@ -33,7 +34,7 @@ http = inject(HttpClient)
     },
   };
 
-  constructor(public translate: TranslationService) {}
+  constructor() {}
 
   onSubmit(contactForm: NgForm) {
     if (contactForm.submitted && contactForm.form.valid) {

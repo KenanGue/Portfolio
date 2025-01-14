@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { TranslationService } from '../../translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })
 export class ContactMeComponent {
-  constructor(public translate: TranslationService) {}
 
 }
