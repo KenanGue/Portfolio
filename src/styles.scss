@@ -1,45 +1,47 @@
 @font-face {
-    font-family: 'fira code';
-    src: url('./assets/fonts/FiraCode-VariableFont_wght.ttf');
+  font-family: 'fira code';
+  src: url('./assets/fonts/FiraCode-VariableFont_wght.ttf');
 }
 
 @font-face {
-    font-family: 'karla';
-    src: url('./assets/fonts/Karla-VariableFont_wght.ttf');
+  font-family: 'karla';
+  src: url('./assets/fonts/Karla-VariableFont_wght.ttf');
 }
 
-html, body {
-    margin: 0;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+
+html,
+body {
+  margin: 0;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 }
 
 .bg-color {
-    max-width: 100%; 
-    overflow-x: hidden; 
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-    width: 16px;
-    background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: #3DCFB6; 
-    border-radius: 10px; 
-    border: 4px solid #ffffff00; 
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-  }
-  
-  .container::-webkit-scrollbar {
-    width: 16px;
-  }
+  width: 10px;
+  background-color: #08463b;
+}
 
-  .container::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-  }
-  
+::-webkit-scrollbar-thumb {
+  background-color: #3DCFB6;
+  border-radius: 10px;
+  border: 4px solid #ffffff00;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.container::-webkit-scrollbar {
+  width: 16px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
