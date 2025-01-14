@@ -15,12 +15,11 @@
           />
         </div>
       </div>
-      <!-- Links anzeigen oder ausblenden -->
       <p *ngIf="showLinks()" (click)="scrollToSection('about-me')">{{ 'MENU1' | translate }}</p>
       <p *ngIf="showLinks()" (click)="scrollToSection('skills')">{{ 'MENU2' | translate }}</p>
       <p *ngIf="showLinks()" (click)="scrollToSection('projects')">{{ 'MENU3' | translate }}</p>
     </div>
-    <div class="header-logo" (mouseover)="logo()" (mouseout)="logoHover()">
+    <div routerLink="" class="header-logo" (mouseover)="logo()" (mouseout)="logoHover()">
       <img src="/assets/img/header/logo.png" alt="">
       <img src="/assets/img/header/logo_hover.png" alt="">
     </div>
