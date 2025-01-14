@@ -33,6 +33,7 @@
             text-decoration-skip-ink: none;
             color: #FFFFFF;
         }
+
         >p:nth-child(3) {
             margin-top: 8px;
         }
@@ -120,6 +121,7 @@
                 text-align: left;
                 color: #FFFFFF;
             }
+
             >p:nth-child(3) {
                 margin-top: 8px;
             }
@@ -197,19 +199,20 @@
 }
 
 @media (max-width: 375px) {
-    .footer-mobile{
-        >div:nth-child(1){
-            >div:nth-child(1){
-            >p:nth-child(2){
-                font-size: 12px;
-line-height: 8px;
-margin-top: 24px;
-margin-left: 6px;
-            }
-            >p:nth-child(3){
-                font-size: 12px;
-                margin-left: 6px;
-            }
+    .footer-mobile {
+        >div:nth-child(1) {
+            >div:nth-child(1) {
+                >p:nth-child(2) {
+                    font-size: 12px;
+                    line-height: 8px;
+                    margin-top: 24px;
+                    margin-left: 6px;
+                }
+
+                >p:nth-child(3) {
+                    font-size: 12px;
+                    margin-left: 6px;
+                }
             }
         }
     }

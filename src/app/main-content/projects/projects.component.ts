@@ -34,13 +34,11 @@ export class ProjectsComponent {
     },
   ];
 
-
   constructor(private translate: TranslateService) { }
 
   ngOnInit(): void {
     this.loadProjectTranslations();
 
-    // Aktualisiere Übersetzungen bei Sprachwechsel
     this.translate.onLangChange.subscribe(() => {
       this.loadProjectTranslations();
     });
@@ -70,7 +68,6 @@ export class ProjectsComponent {
     this.isDialogOpen = false;
     document.body.style.overflow = '';
   }
-
 
   goToLink(url: string): void {
     if (url) {

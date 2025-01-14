@@ -27,24 +27,21 @@ export class AboveTheFoldComponent implements OnInit {
   ngOnInit() {
     this.loadBannerTexts();
 
-    // Beobachte Sprachwechsel, um Texte dynamisch zu aktualisieren
     this.translate.onLangChange.subscribe(() => {
       this.loadBannerTexts();
     });
 
-    // Arrow-Animation nur im Browser starten
     if (isPlatformBrowser(this.platformId)) {
       this.ngZone.run(() => {
         setInterval(() => {
           this.currentArrowIndex =
             (this.currentArrowIndex + 1) % this.arrowImages.length;
-        }, 1000); // Wechsel alle 1 Sekunde
+        }, 1000);
       });
     }
   }
 
   loadBannerTexts() {
-    // Lade Banner-Texte aus den Übersetzungsdateien
     this.translate.get('BANNER_TEXTS').subscribe((texts: string[]) => {
       this.scrollingTexts = texts;
     });
@@ -52,7 +49,7 @@ export class AboveTheFoldComponent implements OnInit {
 
   ngOnDestroy() {
     if (this.currentArrowIndex) {
-      clearInterval(this.currentArrowIndex); // Speicherlecks vermeiden
+      clearInterval(this.currentArrowIndex); 
     }
   }
 

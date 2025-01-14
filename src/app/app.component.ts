@@ -12,6 +12,7 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./app.component.scss'] 
 })
 export class AppComponent implements OnInit {
+  title = 'Kenan Günes';
   constructor(private router: Router) {}
 
   ngOnInit(): void {
