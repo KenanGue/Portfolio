@@ -1,47 +1,58 @@
+.bg-color {
+    width: 100%;
+    display: flex;
+    background-color: rgb(28, 28, 28);
+}
+
 .legal {
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 
+    >div:nth-child(1) {
+        width: 100%;
+    }
 
     >div:nth-child(2) {
-        width: 100%;
+        width: 1440px;
         display: flex;
-        align-items: center;
-        background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
-        background-size: cover;
+        flex-direction: column;
 
         >div:nth-child(1) {
-            position: absolute;
-            right: 96px;
-            top: 140px;
+            display: flex;
+            align-items: baseline;
+            flex-direction: row-reverse;
+            justify-content: space-between;
 
-            &:hover {
-                cursor: pointer;
-                transform: scale(1.2);
-            }
-        }
-
-        >div:nth-child(2) {
             >h1 {
                 font-family: fira code;
                 font-size: 56px;
                 font-weight: 700;
                 color: #3DCFB6;
                 font-size: 48px;
-                margin: 0px 96px;
                 margin-bottom: 54px;
                 margin-top: 140px;
             }
 
+            >div {
+                >img {
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+
+        >div:nth-child(2) {
             >h2 {
                 font-family: fira code;
                 font-size: 32px;
                 font-weight: 700;
                 color: #3DCFB6;
-                margin: 0px 96px;
                 margin-bottom: 16px;
                 margin-top: 24px;
             }
@@ -51,7 +62,6 @@
                 font-size: 24px;
                 font-weight: 400;
                 color: #3DCFB6;
-                margin: 0px 96px;
                 margin-bottom: 16px;
                 margin-top: 24px;
             }
@@ -61,7 +71,6 @@
                 font-size: 16px;
                 font-weight: 400;
                 color: #3DCFB6;
-                margin: 0px 96px;
                 margin-top: 24px;
             }
 
@@ -70,7 +79,6 @@
                 font-size: 16px;
                 color: #ffffff;
                 line-height: 24px;
-                margin: 0px 96px;
             }
 
             >p:nth-child(17) {
@@ -106,12 +114,55 @@
             }
         }
     }
+    >div:nth-child(3){
+        width: 100%;
+    }
+}
+
+@media (max-width: 1640px) {
+    .legal {
+        >div:nth-child(2) {
+            width: 100%;
+            padding-left: 96px;
+            padding-right: 96px;
+
+            >div:nth-child(1) {
+                margin: 0px 96px;
+
+                >h1 {
+                    font-size: 48px;
+                }
+            }
+
+            >div:nth-child(2) {
+                >h2 {
+                    font-size: 24px;
+                    margin: 0px 96px;
+                }
+
+                >h3 {
+                    font-size: 16px;
+                    margin: 0px 96px;
+                }
+
+                >h4 {
+                    font-size: 14px;
+                    margin: 0px 96px;
+                }
+
+                >p {
+                    font-size: 14px;
+                    margin: 0px 96px;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 1138px) {
     .legal {
         >div:nth-child(2) {
-            >div:nth-child(2) {
+            >div:nth-child(1) {
                 >h1 {
                     font-size: 48px;
                 }
@@ -139,11 +190,13 @@
 @media (max-width: 904px) {
     .legal {
         >div:nth-child(2) {
-            >div:nth-child(2) {
+            >div:nth-child(1) {
+                margin: 0px 16px;
                 >h1 {
                     font-size: 40px;
                 }
-
+            }
+            >div:nth-child(2) {
                 >h2 {
                     font-size: 14px;
                 }
@@ -171,19 +224,15 @@
 @media (max-width: 790px) {
     .legal {
         >div:nth-child(2) {
-
-            >div:nth-child(1) {
-                right: 16px;
-            }
             >div:nth-child(2) {
-                
+
                 >p,
                 >h4,
                 >h3,
                 >h2,
                 >h1 {
                     margin-left: 16px;
-                    margin-right: 16px;                    
+                    margin-right: 16px;
                 }
             }
         }
@@ -193,16 +242,14 @@
 @media (max-width: 570px) {
     .legal {
         >div:nth-child(2) {
-
             >div:nth-child(1) {
-                right: 16px;
-            }
-            >div:nth-child(2) {
-                >h1 {
+                margin: 0px 16px;
+               >h1 {
                     font-size: 20px;
                     margin-bottom: 0;
                 }
-
+            }
+            >div:nth-child(2) {
                 >h2 {
                     font-size: 12px;
                     margin-top: 0;

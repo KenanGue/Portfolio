@@ -1,4 +1,4 @@
-<div class="bg-color">
+<div *ngIf="isInitialized" class="bg-color">
   <div class="header">
     <div>
       <div class="language-switch">
@@ -15,18 +15,18 @@
           />
         </div>
       </div>
-      <p *ngIf="showLinks()" (click)="scrollToSection('about-me')">{{ 'MENU1' | translate }}</p>
-      <p *ngIf="showLinks()" (click)="scrollToSection('skills')">{{ 'MENU2' | translate }}</p>
-      <p *ngIf="showLinks()" (click)="scrollToSection('projects')">{{ 'MENU3' | translate }}</p>
+      <p (click)="scrollToSection('about-me')">{{ 'MENU1' | translate }}</p>
+      <p (click)="scrollToSection('skills')">{{ 'MENU2' | translate }}</p>
+      <p (click)="scrollToSection('projects')">{{ 'MENU3' | translate }}</p>
     </div>
-    <div routerLink="" class="header-logo" (mouseover)="logo()" (mouseout)="logoHover()">
+    <div (click)="reloadPage()" class="header-logo" (mouseover)="logo()" (mouseout)="logoHover()">
       <img src="/assets/img/header/logo.png" alt="">
       <img src="/assets/img/header/logo_hover.png" alt="">
     </div>
   </div>
 
   <div class="header-mobile">
-    <div class="mobile-logo" (mouseover)="logoMobile()" (mouseout)="logoHoverMobile()">
+    <div (click)="reloadPage()" class="mobile-logo" (mouseover)="logoMobile()" (mouseout)="logoHoverMobile()">
       <img src="./../../../assets/img/header/logo_small.png" alt="">
       <img src="./../../../assets/img/header/logo_small_hover.png" alt="">
     </div>
@@ -40,9 +40,9 @@
   <div class="overlay" *ngIf="menuOpen" (click)="closeMenu()"></div>
   <div class="mobile-dropdown-menu" *ngIf="menuOpen">
     <ul>
-      <li *ngIf="showLinks()" (click)="scrollToSection('about-me')">{{ 'About me' }}</li>
-      <li *ngIf="showLinks()" (click)="scrollToSection('skills')">{{ 'Skills' }}</li>
-      <li *ngIf="showLinks()" (click)="scrollToSection('projects')">{{ 'Projects' }}</li>
+      <li (click)="scrollToSection('about-me')">{{ 'MENU1' | translate }}</li>
+      <li (click)="scrollToSection('skills')">{{ 'MENU2' | translate }}</li>
+      <li (click)="scrollToSection('projects')">{{ 'MENU3' | translate }}</li>
     </ul>
     <div class="language-switch">
       <div (click)="switchButton()">

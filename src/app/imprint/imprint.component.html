@@ -1,16 +1,19 @@
-<div class="imprint">
-    <div><app-header></app-header></div>
+<div class="bg-color">
+    <div class="imprint">
+        <div><app-header></app-header></div>
 
-    <div>
-        <div routerLink=""><img src="./../../assets/img/imprint/arrow_back.png" alt=""></div>
         <div>
-            <h1>{{ 'IMPRINT_TITLE' | translate }}</h1>
-            <p>{{ 'IMPRINT_NAME' | translate }}</p>
-            <p>{{ 'IMPRINT_ADDRESS' | translate }}</p>
-            <p>{{ 'IMPRINT_ZIP_CITY' | translate }}</p>
-            <p>{{ 'IMPRINT_EMAIL_LABEL' | translate }}: <a href="mailto:gunes.kenan93@gmail.com">gunes.kenan93&#64;gmail.com</a></p>
-            <p>{{ 'IMPRINT_PHONE_LABEL' | translate }}: <a href="tel:+491736902096">+49 1736902096</a></p>
+            <div routerLink=""><img src="./../../assets/img/imprint/arrow_back.png" alt=""></div>
+            <div>
+                <h1>{{ 'IMPRINT_TITLE' | translate }}</h1>
+                <p>{{ 'IMPRINT_NAME' | translate }}</p>
+                <p>{{ 'IMPRINT_ADDRESS' | translate }}</p>
+                <p>{{ 'IMPRINT_ZIP_CITY' | translate }}</p>
+                <p>{{ 'IMPRINT_EMAIL_LABEL' | translate }}: <a
+                        href="mailto:gunes.kenan93@gmail.com">gunes.kenan93&#64;gmail.com</a></p>
+                <p>{{ 'IMPRINT_PHONE_LABEL' | translate }}: <a href="tel:+491736902096">+49 1736902096</a></p>
+            </div>
         </div>
+        <div><app-footer></app-footer></div>
     </div>
-    <div><app-footer></app-footer></div>
 </div>

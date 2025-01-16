@@ -2,7 +2,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
+    background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgb(8, 70, 59) 0%, #1C1C1C 100%);
+    background-repeat: no-repeat;
 }
 
 .skills {
@@ -202,12 +203,13 @@
 @media (max-width: 790px) {
     .skills {
         flex-direction: column;
-        padding: 0px 16px !important;
+        padding: 16px 16px !important;
         width: 100%;
 
         div:nth-child(1) {
             h3 {
                 font-size: 18px;
+                margin-top: 16px;
             }
         }
     }
@@ -224,7 +226,7 @@
 
     .skill-description {
         >p:nth-child(1) {
-            font-size: 56px !important;
+            font-size: 40px !important;
         }
 
         >p:nth-child(2) {
@@ -240,7 +242,7 @@
 @media (max-width: 375px){
     .skill-description {
         >p:nth-child(1) {
-            font-size: 40px !important;
+            font-size: 32px !important;
             padding-bottom: 0;
         }
 
@@ -255,6 +257,10 @@
        
         >p:nth-child(4) {
             font-size: 13px;
+        }
+
+        >button{
+            width: 50%;
         }
     }
 }

@@ -22,6 +22,8 @@ http = inject(HttpClient)
     message: ''
   };
   privacyChecked: boolean = false;
+  emailSent: boolean = false; 
+  errorMessage: string = '';
 
   post = {
     endPoint: 'https://kenan-günes.de/sendMail.php',
@@ -36,22 +38,51 @@ http = inject(HttpClient)
 
   constructor() {}
 
-  onSubmit(contactForm: NgForm) {
+  onSubmit(contactForm: NgForm): void {
     if (contactForm.submitted && contactForm.form.valid) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
-        .subscribe({
-          next: (response) => {
-            console.info('Response:', response);
-            contactForm.resetForm();
-          },
-          error: (error) => {
-            console.error('Error:', error);
-          },
-          complete: () => console.info('Post request complete'),
-        });
-    } else if (contactForm.submitted && contactForm.form.valid) {
-      console.info('Mail test active, skipping HTTP request.');
-      contactForm.resetForm();
+      this.sendEmail(contactForm);
+    } else {
+      this.handleInvalidForm();
     }
   }
+
+  private sendEmail(contactForm: NgForm): void {
+    this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
+      .subscribe({
+        next: (response) => this.handleEmailSuccess(contactForm, response),
+        error: (error) => this.handleEmailError(error),
+      });
+  }
+
+  private handleEmailSuccess(contactForm: NgForm, response: any): void {
+    console.info('Response:', response);
+    this.emailSent = true;
+    contactForm.resetForm();
+    this.privacyChecked = false;
+  
+    setTimeout(() => {
+      this.emailSent = false;
+    }, 3000);
+  }
+
+  private handleEmailError(error: any): void {
+    console.error('Error:', error);
+    this.errorMessage = 'Failed to send email. Please try again later.';
+  
+    setTimeout(() => {
+      this.errorMessage = '';
+    }, 3000);
+  }
+  
+  private handleInvalidForm(): void {
+    console.warn('Form is invalid or not submitted correctly.');
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', 
+    });
+  }
+  
 }

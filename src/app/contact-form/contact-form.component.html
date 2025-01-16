@@ -4,14 +4,8 @@
       <div>
         <p>{{ 'FORM_NAME_LABEL' | translate }}</p>
       </div>
-      <input
-        type="text"
-        [placeholder]="'FORM_NAME_PLACEHOLDER' | translate"
-        name="name"
-        [(ngModel)]="contactData.name"
-        required
-        #name="ngModel"
-      />
+      <input type="text" [placeholder]="'FORM_NAME_PLACEHOLDER' | translate" name="name" [(ngModel)]="contactData.name"
+        required #name="ngModel" />
       <div *ngIf="name.touched && name.invalid" style="color:red;">
         {{ 'FORM_NAME_ERROR' | translate }}
       </div>
@@ -20,16 +14,9 @@
       <div>
         <p>{{ 'FORM_EMAIL_LABEL' | translate }}</p>
       </div>
-      <input
-        type="email"
-        [placeholder]="'FORM_EMAIL_PLACEHOLDER' | translate"
-        name="email"
-        [(ngModel)]="contactData.email"
-        required
-        email
-        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-        #email="ngModel"
-      />
+      <input type="email" [placeholder]="'FORM_EMAIL_PLACEHOLDER' | translate" name="email"
+        [(ngModel)]="contactData.email" required email pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+        #email="ngModel" />
       <div *ngIf="email.touched && email.invalid" style="color:red;">
         {{ 'FORM_EMAIL_ERROR' | translate }}
       </div>
@@ -38,27 +25,15 @@
       <div>
         <p>{{ 'FORM_MESSAGE_LABEL' | translate }}</p>
       </div>
-      <input
-        type="text"
-        [placeholder]="'FORM_MESSAGE_PLACEHOLDER' | translate"
-        name="message"
-        [(ngModel)]="contactData.message"
-        required
-        #message="ngModel"
-      />
+      <input type="text" [placeholder]="'FORM_MESSAGE_PLACEHOLDER' | translate" name="message"
+        [(ngModel)]="contactData.message" required #message="ngModel" />
       <div *ngIf="message.touched && message.invalid" style="color:red;">
         {{ 'FORM_MESSAGE_ERROR' | translate }}
       </div>
     </div>
     <div class="custom-checkbox-wrapper">
-      <input
-        type="checkbox"
-        id="privacyChecked"
-        name="privacyChecked"
-        [(ngModel)]="privacyChecked"
-        required
-        #privacyCheckedField="ngModel"
-      />
+      <input type="checkbox" id="privacyChecked" name="privacyChecked" [(ngModel)]="privacyChecked" required
+        #privacyCheckedField="ngModel" />
       <label for="privacyChecked" class="custom-checkbox"></label>
       <div>
         <p>
@@ -72,7 +47,20 @@
       </div>
     </div>
     <div>
-      <button type="submit" [disabled]="!contactForm.valid">{{ 'FORM_SUBMIT_BUTTON' | translate }}</button>
+      <div>
+        <div *ngIf="emailSent" class="success-message">
+          {{ 'FORM_SUCCESS_MESSAGE' | translate }}
+        </div>
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+      </div>
+      <div>
+        <button type="submit" [disabled]="!contactForm.valid">{{ 'FORM_SUBMIT_BUTTON' | translate }}</button>
+      </div>
     </div>
   </div>
 </form>
+<div class="to-top" (click)="scrollToTop()">
+<img  src="./../../assets/img/imprint/arrow_back.png" alt="">
+</div>

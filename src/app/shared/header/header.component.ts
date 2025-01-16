@@ -13,19 +13,34 @@ import { Router, RouterModule } from '@angular/router';
 export class HeaderComponent implements OnInit {
   currentLanguage: string = 'en';
   menuOpen: boolean = false;
+  isInitialized: boolean = false;
 
   constructor(
     private elementRef: ElementRef,
     private translate: TranslateService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.translate.setDefaultLang(this.currentLanguage);
+    const savedLanguage = this.getSavedLanguage();
+    this.setLanguage(savedLanguage);
   }
 
-  showLinks(): boolean {
-    return this.router.url !== '/imprint' && this.router.url !== '/privacy-policy';
+  private getSavedLanguage(): string {
+    return localStorage.getItem('language') || 'en';
+  }
+
+  private setLanguage(language: string): void {
+    this.currentLanguage = language;
+    this.translate.use(language).subscribe({
+      next: () => {
+        this.isInitialized = true;
+      },
+      error: (err) => {
+        console.error(`Error loading language: ${err}`);
+        this.isInitialized = true;
+      },
+    });
   }
 
   logo() {
@@ -72,14 +87,33 @@ export class HeaderComponent implements OnInit {
 
   switchButton(): void {
     this.currentLanguage = this.currentLanguage === 'en' ? 'de' : 'en';
-    this.translate.use(this.currentLanguage);
+    localStorage.setItem('language', this.currentLanguage);
+    this.translate.use(this.currentLanguage).subscribe({
+      error: (err) => console.error('Error switching language:', err)
+    });
   }
 
-  scrollToSection(sectionId: string): void {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  scrollToSection(section: string): void {
     this.closeMenu();
+    const isHome = this.router.url === '/';
+    if (isHome) {
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => {
+          const element = document.getElementById(section);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      });
+    }
+  }
+
+  reloadPage(): void {
+    window.location.reload();
   }
 }

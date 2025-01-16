@@ -63,36 +63,40 @@
 
     >div:nth-child(5) {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
 
-        >button {
-            height: 48px;
-            padding: 0px 24px 0px 24px;
-            gap: 10px;
-            border-radius: 100px;
-            background-color: transparent;
-            color: #ffffff;
-            border: 1px solid #FFFFFF;
-            margin-top: 32px;
-            font-family: "karla";
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 21.6px;
-            text-underline-position: auto;
-            text-decoration-skip-ink: none;
+        >div:nth-child(2) {
+            >button {
+                height: 48px;
+                padding: 0px 24px 0px 24px;
+                gap: 10px;
+                border-radius: 100px;
+                background-color: transparent;
+                color: #ffffff;
+                border: 1px solid #FFFFFF;
+                margin-top: 16px;
+                font-family: "karla";
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 21.6px;
+                text-underline-position: auto;
+                text-decoration-skip-ink: none;
 
-            &:hover {
-                color: #3DCFB6;
-                border: 1px solid #3DCFB6;
-                cursor: pointer;
+                &:hover {
+                    color: #3DCFB6;
+                    border: 1px solid #3DCFB6;
+                    cursor: pointer;
+                }
+
             }
-            
+
+            button:disabled {
+                background-color: #cccccc00;
+                color: #666;
+                cursor: not-allowed;
+            }
         }
-        button:disabled {
-            background-color: #cccccc00;
-            color: #666;
-            cursor: not-allowed;
-          }
     }
 }
 
@@ -233,6 +237,51 @@
     }
 }
 
+.success-message {
+    color: green;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.error-message {
+    color: red;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.success-message,
+.error-message {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.to-top {
+    margin-top: 80px;
+
+    >img {
+        width: 32px;
+        transform: rotate(90deg);
+        position: absolute;
+        right: 96px;
+        display: inline-block;
+        animation: bounce 1s infinite;
+        cursor: pointer;
+    }
+
+    @keyframes bounce {
+
+        0%,
+        100% {
+            transform: rotate(90deg) translateX(0);
+        }
+
+        50% {
+            transform: rotate(90deg) translateX(-20px);
+        }
+    }
+}
+
 @media (max-width: 1200px) {
     .form {
         display: flex;
@@ -244,6 +293,12 @@
 @media (max-width: 790px) {
     .form {
         width: 100%;
+    }
+
+    .to-top {
+        >img {
+            right: 16px;
+        }
     }
 }
 
