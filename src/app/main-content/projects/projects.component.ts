@@ -56,14 +56,12 @@ export class ProjectsComponent {
   }
 
   openDialog(project: any): void {
-    console.log('Dialog geöffnet:', project);
     this.currentProject = project;
     this.isDialogOpen = true;
     document.body.style.overflow = 'hidden';
   }
 
   closeDialog(): void {
-    console.log('Dialog geschlossen');
     this.currentProject = null;
     this.isDialogOpen = false;
     document.body.style.overflow = '';

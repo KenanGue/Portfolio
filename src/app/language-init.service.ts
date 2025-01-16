@@ -29,7 +29,6 @@ export class LanguageInitService {
   private loadLanguage(language: string, resolve: () => void): void {
     this.translate.use(language).subscribe({
       next: () => {
-        console.log(`Language loaded: ${language}`);
         resolve();
       },
       error: (err) => {
@@ -42,7 +41,6 @@ export class LanguageInitService {
   private loadDefaultLanguage(resolve: () => void): void {
     this.translate.use('en').subscribe({
       next: () => {
-        console.log('Default language loaded: en');
         resolve();
       },
       error: (err) => {
