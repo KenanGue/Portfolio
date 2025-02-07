@@ -42,7 +42,7 @@
   "CONTACT_QUESTION": "Haben Sie ein Problem, das sie lösen möchten?",
   "CONTACT_DESCRIPTION": "Kontaktieren Sie mich über dieses Formular. Ich freue mich darauf, von Ihnen zu hören, Ihre Ideen zu erfahren und durch meine Arbeit zu Ihren Projekten beizutragen.",
   "CONTACT_TALK": "Brauchen Sie einen Frontend-Entwickler?<span class='talk'> Wie kann ich ihnen helfen?</span>",
-  "FORM_NAME_LABEL": "Wie heißt Sie?",
+  "FORM_NAME_LABEL": "Wie heißen Sie?",
   "FORM_NAME_PLACEHOLDER": "Ihr Name kommt hier hin",
   "FORM_NAME_ERROR": "Bitte geben Sie Ihren Namen ein.",
   "FORM_EMAIL_LABEL": "Wie lautet Ihre E-Mail?",
